@@ -1,0 +1,10 @@
+.page--full_bg__background {
+   background-image:url('../img/background.jpg');
+   background-repeat: no-repeat;
+}
+
+.main-buttons {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
