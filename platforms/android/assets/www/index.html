@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
     Licensed to the Apache Software Foundation (ASF) under one
     or more contributor license agreements.  See the NOTICE file
     distributed with this work for additional information
@@ -17,33 +19,138 @@
     specific language governing permissions and limitations
     under the License.
 -->
-<html>
+<html lang="en" ng-app="wedding-app" ng-csp>
     <head>
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="libs/onsen/onsenui.css">
+        <link rel="stylesheet" type="text/css" href="libs/onsen/onsen-css-components.css"/>
+        <link rel="stylesheet" type="text/css" href="libs/onsen/onsen-css-components-purple-theme.css">
+
+        <script type="text/javascript" src="libs/onsen/angular/angular.js"></script>
+        <script type="text/javascript" src="libs/onsen/onsenui.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+
+      //module.controller('AppController', function($scope) { });
+
+
+        <script type="text/javascript" src="js/Controllers/AboutController.js"></script>
+
+    </head>
+    <body>
+    <ons-navigator animation="slide" var="app.navi">
+        <ons-page>
+            <ons-toolbar>
+                <div class="center">Rebecca & Matthew Willeke</div>
+            </ons-toolbar>
+
+            <p style="text-align: center">
+                <ons-button modifier="light" ng-click="app.navi.pushPage('ceremonyProgram.html');">Ceremony Program</ons-button>
+            </p>
+            <p style="text-align: center">
+                <ons-button modifier="light" ng-click="app.navi.pushPage('weddingParty.html');">Wedding Party</ons-button>
+            </p>
+            <p style="text-align: center">
+                <ons-button modifier="light" ng-click="app.navi.pushPage('registry.html');">Registry</ons-button>
+            </p>
+            <p style="text-align: center">
+                <ons-button modifier="light" ng-click="app.navi.pushPage('hotel.html');">Hotel</ons-button>
+            </p>
+            <p style="text-align: center">
+                <ons-button modifier="light" ng-click="app.navi.pushPage('messenger.html');">Messenger</ons-button>
+            </p>
+            <p style="text-align: center">
+                <ons-button modifier="light" ng-click="app.navi.pushPage('photoBooth.html');">Photo Booth</ons-button>
+            </p>
+        </ons-page>
+    </ons-navigator>
+
+    <ons-template id="ceremonyProgram.html">
+        <ons-page>
+            <ons-toolbar>
+                <div class="center">Ceremony Program</div>
+            </ons-toolbar>
+
+            <p style="text-align: center">
+                <ons-button modifier="light" ng-click="app.navi.popPage('ceremonyProgram.html');">Back</ons-button>
+            </p>
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="weddingParty.html">
+        <ons-page>
+            <ons-toolbar>
+                <div class="center">Wedding Party</div>
+            </ons-toolbar>
+
+            <p style="text-align: center">
+                <ons-button modifier="light" ng-click="app.navi.popPage('weddingParty.html');">Back</ons-button>
+            </p>
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="registry.html">
+        <ons-page>
+            <ons-toolbar>
+                <div class="center">Registry</div>
+            </ons-toolbar>
+
+            <p style="text-align: center">
+                <ons-button modifier="light" ng-click="app.navi.popPage('registry.html');">Back</ons-button>
+            </p>
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="hotel.html">
+        <ons-page>
+            <ons-toolbar>
+                <div class="center">Hotel</div>
+            </ons-toolbar>
+
+            <p style="text-align: center">
+                <ons-button modifier="light" ng-click="app.navi.popPage('hotel.html');">Back</ons-button>
+            </p>
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="messenger.html">
+        <ons-page>
+            <ons-toolbar>
+                <div class="center">Messenger</div>
+            </ons-toolbar>
+
+            <p style="text-align: center">
+                <ons-button modifier="light" ng-click="app.navi.popPage('messenger.html');">Back</ons-button>
+            </p>
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="photoBooth.html">
+        <ons-page>
+            <ons-toolbar>
+                <div class="center">Photo Booth</div>
+            </ons-toolbar>
+
+            <p style="text-align: center">
+                <ons-button modifier="light" ng-click="app.navi.popPage('photoBooth.html');">Back</ons-button>
+            </p>
+        </ons-page>
+    </ons-template>
+
+
+
+    <!--<ons-navigator var="mainnav">-->
+        <!--<ons-page class="page__background" ng-controller="AboutController">-->
+            <!--<div>{{name}}</div>-->
+
+        <!--</ons-page>-->
+    <!--</ons-navigator>-->
+
     </body>
+
 </html>
