@@ -29,7 +29,8 @@
         <link rel="stylesheet" type="text/css" href="libs/onsen/onsenui.css">
         <link rel="stylesheet" type="text/css" href="libs/onsen/onsen-css-components.css"/>
         <link rel="stylesheet" type="text/css" href="libs/onsen/onsen-css-components-purple-theme.css">
-
+		<link rel="stylesheet" type="text/css" href="css/custom.css">
+		
         <script type="text/javascript" src="libs/onsen/angular/angular.js"></script>
         <script type="text/javascript" src="libs/onsen/onsenui.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
@@ -42,31 +43,20 @@
         <script type="text/javascript" src="js/Controllers/AboutController.js"></script>
 
     </head>
-    <body>
+    <body class="mainwrapper">
     <ons-navigator animation="slide" var="app.navi">
-        <ons-page>
+        <ons-page  modifier="full_bg">
             <ons-toolbar>
                 <div class="center">Rebecca & Matthew Willeke</div>
             </ons-toolbar>
-
-            <p style="text-align: center">
-                <ons-button modifier="light" ng-click="app.navi.pushPage('ceremonyProgram.html');">Ceremony Program</ons-button>
-            </p>
-            <p style="text-align: center">
-                <ons-button modifier="light" ng-click="app.navi.pushPage('weddingParty.html');">Wedding Party</ons-button>
-            </p>
-            <p style="text-align: center">
-                <ons-button modifier="light" ng-click="app.navi.pushPage('registry.html');">Registry</ons-button>
-            </p>
-            <p style="text-align: center">
-                <ons-button modifier="light" ng-click="app.navi.pushPage('hotel.html');">Hotel</ons-button>
-            </p>
-            <p style="text-align: center">
-                <ons-button modifier="light" ng-click="app.navi.pushPage('messenger.html');">Messenger</ons-button>
-            </p>
-            <p style="text-align: center">
-                <ons-button modifier="light" ng-click="app.navi.pushPage('photoBooth.html');">Photo Booth</ons-button>
-            </p>
+			<div class="main-buttons">
+                <ons-button modifier="large" ng-click="app.navi.pushPage('ceremonyProgram.html');">Ceremony Program</ons-button>
+                <ons-button modifier="large" ng-click="app.navi.pushPage('weddingParty.html');">Wedding Party</ons-button>
+                <ons-button modifier="large" ng-click="app.navi.pushPage('registry.html');">Registry</ons-button>
+                <ons-button modifier="large" ng-click="app.navi.pushPage('hotel.html');">Hotel</ons-button>
+                <ons-button modifier="large" ng-click="app.navi.pushPage('messenger.html');">Messenger</ons-button>
+                <ons-button modifier="large" ng-click="app.navi.pushPage('photoBooth.html');">Photo Booth</ons-button>
+            </div>
         </ons-page>
     </ons-navigator>
 
