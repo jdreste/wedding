@@ -1,0 +1,4 @@
+# Android
+platforms/android/bin/
+platforms/android/gen/
+platforms/android/CordovaLib
