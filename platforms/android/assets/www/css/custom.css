@@ -1,6 +1,10 @@
 .page--full_bg__background {
    background-image:url('../img/background.jpg');
+   background-position: center center;
    background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;
+   background-color: #efefef;
 }
 
 .main-buttons {
@@ -8,3 +12,6 @@
 	bottom: 0;
 	width: 100%;
 }
+
+.party-women {postion: absolute; top: 0; height: 50%; width: 100%; background-color:red;}
+.party-men {postion: absolute; bottom: 0; height: 50%; width: 100%; background-color:blue;}
