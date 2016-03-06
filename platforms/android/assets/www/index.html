@@ -40,12 +40,14 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/launchnavigator.js"></script>
 
 		<!-- Controllers -->
         <script type="text/javascript" src="js/Controllers/AboutController.js"></script>
         <script type="text/javascript" src="js/Controllers/ManListController.js"></script>
         <script type="text/javascript" src="js/Controllers/WomanListController.js"></script>
         <script type="text/javascript" src="js/Controllers/TakePhotoController.js"></script>
+        <script type="text/javascript" src="js/Controllers/DirectionsController.js"></script>
 
     </head>
     <body>
@@ -62,6 +64,7 @@
 	                <ons-button modifier="large" ng-click="app.navi.pushPage('hotel.html');">Hotel</ons-button>
 	                <ons-button modifier="large" ng-click="app.navi.pushPage('messenger.html');">Messenger</ons-button>
 	                <ons-button modifier="large" ng-click="app.navi.pushPage('photoBooth.html');">Photo Booth</ons-button>
+                    <ons-button modifier="large" ng-click="app.navi.pushPage('directions.html');">Directions</ons-button>
 	        </div>
         </ons-page>
     </ons-navigator>
@@ -200,6 +203,28 @@
             <p style="text-align: center">
                 <ons-button modifier="light" ng-click="submit()">Submit</ons-button>
             </p>
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="directions.html">
+        <ons-page ng-controller="DirectionsController">
+            <ons-toolbar>
+                <div class="center">Directions</div>
+            </ons-toolbar>
+
+            <p style="text-align: center">
+                <ons-button modifier="light" ng-click="app.navi.popPage('directions.html');">Back</ons-button>
+            </p>
+            <div class="directions-hotel" ng-click="launchNavigator(0)">
+                Hotel
+            </div>
+            <div class="directions-reception" ng-click="launchNavigator(1)">
+                Reception
+            </div>
+            <div class="directions-wedding" ng-click="launchNavigator(2)">
+                Wedding
+            </div>
+
         </ons-page>
     </ons-template>
 
