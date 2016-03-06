@@ -26,7 +26,8 @@
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline'; media-src *; img-src * data:;" />
+
         <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="libs/onsen/onsenui.css">
         <link rel="stylesheet" type="text/css" href="libs/onsen/onsen-css-components.css"/>
@@ -200,6 +201,7 @@
                 <ons-button modifier="light" ng-click="takePicture()">Take Photo</ons-button>
             </p>
             <div id="picture"></div>
+            <div class="pic-meta"></div>
             <p style="text-align: center">
                 <ons-button modifier="light" ng-click="submit()">Submit</ons-button>
             </p>
