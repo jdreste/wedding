@@ -1,6 +1,5 @@
 app.controller('TakePhotoController', function($scope, $http) {
 
-    //this.image = "yeah";
     var controller = this;
 
     $scope.takePicture = function(){
@@ -13,16 +12,17 @@ app.controller('TakePhotoController', function($scope, $http) {
     function onSuccess(imageData) {
         controller.image = "data:image/jpeg;base64," + imageData;
         $('#picture').html('<img height="150" width="150" src="' + controller.image + '"/>');
-       // $('.pic-meta').data('encoded',image);
     }
 
     function onFail(message) {
         alert(message);
     }
 
+    function clearCache() {
+        navigator.camera.cleanup();
+    }
+
     $scope.submit = function() {
-    //var imagedata = $('.pic-meta').data('encoded');
-    console.log(controller.image);
 
     var fileURI = controller.image;
 
@@ -53,13 +53,5 @@ app.controller('TakePhotoController', function($scope, $http) {
         options.params = {}; // if we need to send parameters to the server request
         var ft = new FileTransfer();
         ft.upload(fileURI, encodeURI("http://www.evolutiondigitalstl.com/svc/weddingImages.php"), win, fail, options);
-
-
-
-
-       /* $.post("http://www.evolutiondigitalstl.com/svc/weddingImages.php", {data: controller.image}, function(data) {
-            alert("Image uploaded!");
-            console.log(data);
-        });*/
     }
 });
