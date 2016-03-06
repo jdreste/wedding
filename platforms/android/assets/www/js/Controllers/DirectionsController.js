@@ -1,7 +1,6 @@
 app.controller('DirectionsController', function($scope, $http) {
 
     $scope.launchNavigator = function(destination) {
-        console.log('here');
             var goTo = "";
             switch(destination) {
                 case 0: goTo = "10709 Watson Rd., Sunset Hills, Saint Louis, MO 63127";
