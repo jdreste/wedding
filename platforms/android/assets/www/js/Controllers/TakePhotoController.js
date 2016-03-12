@@ -54,4 +54,31 @@ app.controller('TakePhotoController', function($scope, $http) {
         var ft = new FileTransfer();
         ft.upload(fileURI, encodeURI("http://www.evolutiondigitalstl.com/svc/weddingImages.php"), win, fail, options);
     }
+
+    $scope.GalleryDelegate = {
+        configureItemScope: function(index, itemScope) {
+          if (!itemScope.item) {
+            itemScope.canceler = $q.defer();
+            itemScope.item = {
+              image: '',
+              date: '',
+              time: '',
+            };
+
+            $http.get('http://www.evolutiondigitalstl.com/svc/weddingImagesReceieve.php', {timeout: itemScope.canceler.promise})
+            .success(function(data) {
+                itemScope.item.image = data.image;
+                itemScope.item.date = data.date;
+                itemScope.item.time = data.time;
+            })
+            .error(function() {
+              //itemScope.item.desc = 'No bacon lorem ipsum';
+              //itemScope.item.label = 'No bacon';
+            });
+          }
+        },
+        destroyItemScope: function(index, itemScope) {
+          itemScope.canceler.resolve();
+        }
+    }
 });

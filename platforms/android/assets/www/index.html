@@ -49,6 +49,7 @@
         <script type="text/javascript" src="js/Controllers/WomanListController.js"></script>
         <script type="text/javascript" src="js/Controllers/TakePhotoController.js"></script>
         <script type="text/javascript" src="js/Controllers/DirectionsController.js"></script>
+        <script type="text/javascript" src="js/Controllers/MessengerController.js"></script>
 
     </head>
     <body>
@@ -176,7 +177,7 @@
     </ons-template>
 
     <ons-template id="messenger.html">
-        <ons-page>
+        <ons-page ng-controller="MessengerController">
             <ons-toolbar>
                 <div class="center">Messenger</div>
             </ons-toolbar>
@@ -184,6 +185,28 @@
             <p style="text-align: center">
                 <ons-button modifier="light" ng-click="app.navi.popPage('messenger.html');">Back</ons-button>
             </p>
+
+            <label>
+                Enter Message:
+                <input type="text" id="message" name="message" ng-model="message" ng-Maxlength="150">
+            </label>
+
+            <label id="result"></label>
+
+            <p style="text-align: center">
+                <ons-button modifier="light" ng-click="submit()">Submit</ons-button>
+            </p>
+
+            <div id='messageList'>
+                <ons-list>
+                    <ons-list-item ons-lazy-repeat="MessageDelegate">
+                        <span>{{item.message}}</span>
+                        <span>{{item.date}}</span>
+                        <span>{{item.time}}</span>
+                    </ons-list-item>
+                </ons-list>
+            </div>
+
         </ons-page>
     </ons-template>
 
@@ -205,6 +228,17 @@
             <p style="text-align: center">
                 <ons-button modifier="light" ng-click="submit()">Submit</ons-button>
             </p>
+
+            <div id='gallery'>
+                <ons-list>
+                    <ons-list-item ons-lazy-repeat="GalleryDelegate">
+                        <img src="{{itemScope.item.image}}" />
+                        <span>{{itemScope.item.date}}</span>
+                        span>{{itemScope.item.time}}</span>
+                    </ons-list-item>
+                </ons-list>
+            </div>
+
         </ons-page>
     </ons-template>
 
