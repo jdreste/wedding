@@ -44,7 +44,7 @@
         <script type="text/javascript" src="js/launchnavigator.js"></script>
 
 		<!-- Controllers -->
-        <script type="text/javascript" src="js/Controllers/AboutController.js"></script>
+        <script type="text/javascript" src="js/Controllers/MainController.js"></script>
         <script type="text/javascript" src="js/Controllers/ManListController.js"></script>
         <script type="text/javascript" src="js/Controllers/WomanListController.js"></script>
         <script type="text/javascript" src="js/Controllers/TakePhotoController.js"></script>
@@ -54,10 +54,20 @@
     </head>
     <body>
     <ons-navigator animation="slide" var="app.navi">
-        <ons-page modifier="full_bg">
+        <ons-page id="main-page" modifier="full_bg" ng-controller="MainController">
             <ons-toolbar>
                 <div class="center">Rebecca & Matthew Willeke</div>
             </ons-toolbar>
+
+            <div class="modalNamePrompt">
+                <ons-modal var="modal">
+                    <label>Enter your name:
+                        <input ng-model="txtName" type="text" ng-maxlength="25" required="true">
+                    </label>
+                    <ons-button id="close-modal" ng-click="closeModal()">Close</ons-button>
+                    <label id="nameValidationError" style="display: none; color: red;">Invalid!  Please re-enter name.</label>
+                </ons-modal>
+            </div>
             
 			<div class="main-buttons">
 	                <ons-button modifier="large" ng-click="app.navi.pushPage('ceremonyProgram.html');">Ceremony Program</ons-button>
@@ -198,7 +208,7 @@
             </p>
 
             <div id='messageList'>
-                <ons-list>
+                <ons-list style='position: relative; height: 300px;'>
                     <ons-list-item ons-lazy-repeat="MessageDelegate">
                         <span>{{item.message}}</span>
                         <span>{{item.date}}</span>
@@ -230,11 +240,10 @@
             </p>
 
             <div id='gallery'>
-                <ons-list>
+                <ons-list style='position: relative; height: 300px;'>
                     <ons-list-item ons-lazy-repeat="GalleryDelegate">
-                        <img src="{{itemScope.item.image}}" />
-                        <span>{{itemScope.item.date}}</span>
-                        span>{{itemScope.item.time}}</span>
+                        <img style="width:50px;" src="http://www.evolutiondigitalstl.com/uploads/{{item.filename}}.jpg"/>
+                        <span>{{item.sender}}</span>
                     </ons-list-item>
                 </ons-list>
             </div>

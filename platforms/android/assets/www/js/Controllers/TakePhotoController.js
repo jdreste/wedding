@@ -2,9 +2,16 @@ app.controller('TakePhotoController', function($scope, $http) {
 
     var controller = this;
 
+    $http.get('http://www.evolutiondigitalstl.com/svc/weddingImages.php/getImages').success(function(data) {
+            controller.count = data.length;
+            controller.data = data;
+        }).error(function() {
+            alert('error');
+        });
+
     $scope.takePicture = function(){
         navigator.camera.getPicture(onSuccess, onFail, {
-            quality: 50,
+            quality: 10,
             destinationType: Camera.DestinationType.DATA_URL
         });
     }
@@ -41,7 +48,7 @@ app.controller('TakePhotoController', function($scope, $http) {
             } else {
                 retries = 0;
                 clearCache();
-                alert('Ups. Something wrong happens!');
+                alert(error);
             }
         }
 
@@ -57,28 +64,28 @@ app.controller('TakePhotoController', function($scope, $http) {
 
     $scope.GalleryDelegate = {
         configureItemScope: function(index, itemScope) {
-          if (!itemScope.item) {
-            itemScope.canceler = $q.defer();
+         // if (!itemScope.item) {
+          //  itemScope.canceler = $q.defer();
             itemScope.item = {
-              image: '',
-              date: '',
-              time: '',
+                id: '',
+                filename: '',
+                sender: '',
             };
-
-            $http.get('http://www.evolutiondigitalstl.com/svc/weddingImagesReceieve.php', {timeout: itemScope.canceler.promise})
-            .success(function(data) {
-                itemScope.item.image = data.image;
-                itemScope.item.date = data.date;
-                itemScope.item.time = data.time;
-            })
-            .error(function() {
-              //itemScope.item.desc = 'No bacon lorem ipsum';
-              //itemScope.item.label = 'No bacon';
-            });
-          }
+            itemScope.item.id = controller.data[index].id;
+            itemScope.item.filename = controller.data[index].filename;
+            itemScope.item.sender = controller.data[index].sender;
+       //   }
+        },
+        countItems: function() {
+            // Return number of items.
+            return controller.count;
+        },
+        calculateItemHeight: function(index) {
+            // Return the height of an item in pixels.
+            return 100;
         },
         destroyItemScope: function(index, itemScope) {
-          itemScope.canceler.resolve();
+            //itemScope.canceler.resolve();
         }
     }
 });
