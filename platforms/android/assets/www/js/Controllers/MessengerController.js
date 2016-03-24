@@ -2,7 +2,7 @@ app.controller('MessengerController', function($scope, $http) {
 
     var controller = this;
 
-    $http.get('data/messages.json').success(function(data) {
+    $http.get('http://www.evolutiondigitalstl.com/svc/weddingMessages.php/getMessages').success(function(data) {
         controller.count = data.length;
         controller.data = data;
     }).error(function() {
@@ -11,9 +11,18 @@ app.controller('MessengerController', function($scope, $http) {
     });
 
     $scope.submit = function() {
-        var data = $('#message').val();
-        console.log(data);
-        $.post( "http://www.evolutiondigitalstl.com/svc/weddingMessagesSubmit.php", function( data ) {
+
+        var data = {
+            message: $('#message').val(),
+            user: localStorage.getItem("userName"),
+            date: getDate(),
+            time: getTime()
+        };
+        console.log(data.user);
+        console.log(data.message);
+        console.log(data.date);
+        console.log(data.time);
+        $.post( "http://www.evolutiondigitalstl.com/svc/weddingMessages.php", function( data ) {
           $( "#label" ).html( data );
         });
     }
@@ -47,3 +56,4 @@ app.controller('MessengerController', function($scope, $http) {
         }
     }
 });
+

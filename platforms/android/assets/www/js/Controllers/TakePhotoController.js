@@ -32,6 +32,11 @@ app.controller('TakePhotoController', function($scope, $http) {
     $scope.submit = function() {
 
     var fileURI = controller.image;
+    var params = {
+        user: localStorage.getItem("userName"),
+        date: getDate(),
+        time: getTime()
+    };
 
     var win = function (r) {
             clearCache();
@@ -54,6 +59,8 @@ app.controller('TakePhotoController', function($scope, $http) {
 
 
     var options = new FileUploadOptions();
+        options.params = params;
+        options.chunkedMode = false;
         options.fileKey = "file";
         options.fileName = fileURI.substr(fileURI.lastIndexOf('/') + 1);
         options.mimeType = "image/jpeg";
