@@ -56,19 +56,31 @@
     <body>
     <ons-navigator animation="slide" var="app.navi">
         <ons-page id="main-page" modifier="full_bg" ng-controller="MainController">
-            <ons-toolbar>
+            <ons-toolbar fixed-style>
                 <div class="center">Rebecca & Matthew Willeke</div>
             </ons-toolbar>
 
+
+            <div class="modalCodePrompt">
+                <ons-modal var="codeModal">
+                    <label>Enter your code:
+                        <input ng-model="txtCode" type="text" ng-maxlength="10" required="true">
+                    </label>
+                    <ons-button id="close-modal" ng-click="closeCodeModal()">Enter</ons-button>
+                    <label id="codeValidationError" style="display: none; color: red;">Invalid!  Please re-enter code.</label>
+                </ons-modal>
+            </div>
+
             <div class="modalNamePrompt">
-                <ons-modal var="modal">
+                <ons-modal var="nameModal">
                     <label>Enter your name:
                         <input ng-model="txtName" type="text" ng-maxlength="25" required="true">
                     </label>
-                    <ons-button id="close-modal" ng-click="closeModal()">Close</ons-button>
+                    <ons-button id="close-modal" ng-click="closeNameModal()">Enter</ons-button>
                     <label id="nameValidationError" style="display: none; color: red;">Invalid!  Please re-enter name.</label>
                 </ons-modal>
             </div>
+
             
 			<div class="main-buttons">
 	                <ons-button modifier="large" ng-click="app.navi.pushPage('ceremonyProgram.html');">Ceremony Program</ons-button>
@@ -84,26 +96,26 @@
 
     <ons-template id="ceremonyProgram.html">
         <ons-page>
-            <ons-toolbar>
+            <ons-toolbar fixed-style>
+                <div class="left">
+                    <ons-button modifier="dark" ng-click="app.navi.popPage('ceremonyProgram.html');">Back</ons-button>
+                </div>
                 <div class="center">Ceremony Program</div>
             </ons-toolbar>
 
-            <p style="text-align: center">
-                <ons-button modifier="light" ng-click="app.navi.popPage('ceremonyProgram.html');">Back</ons-button>
-            </p>
         </ons-page>
     </ons-template>
 
     <ons-template id="weddingParty.html">
         <ons-page>
-            <ons-toolbar>
+            <ons-toolbar fixed-style>
+                <div class="left">
+                    <ons-button modifier="dark" ng-click="app.navi.popPage('weddingParty.html');">Back</ons-button>
+                </div>
                 <div class="center">Wedding Party</div>
             </ons-toolbar>
 			
 			<div class="party-women" ng-click="app.navi.pushPage('listPartyWomen.html');">
-	            <p style="text-align: center">
-	                <ons-button modifier="light" ng-click="app.navi.popPage('weddingParty.html');">Back</ons-button>
-	            </p>
             </div>
             <div class="party-men" ng-click="app.navi.pushPage('listPartyMen.html');">
             
@@ -114,8 +126,11 @@
     
     <ons-template id="listPartyMen.html">
         <ons-page ng-controller="ManListController">
-            <ons-toolbar>
-                <ons-button modifier="light" ng-click="app.navi.popPage('listPartyMen.html');">Back</ons-button> <div class="center">Men</div>
+            <ons-toolbar fixed-style>
+                <div class="left">
+                    <ons-button modifier="dark" ng-click="app.navi.popPage('listPartyMen.html');">Back</ons-button>
+                </div>
+                <div class="center">Men</div>
             </ons-toolbar>
             
             <ons-list style="margin: -1px 0">
@@ -140,7 +155,10 @@
     
     <ons-template id="listPartyWomen.html">
         <ons-page>
-            <ons-toolbar>
+            <ons-toolbar fixed-style>
+                <div class="left">
+                    <ons-button modifier="dark" ng-click="app.navi.popPage('listPartyWomen.html');">Back</ons-button>
+                </div>
                 <div class="center">Women</div>
             </ons-toolbar>
             
@@ -165,48 +183,44 @@
 
     <ons-template id="registry.html">
         <ons-page>
-            <ons-toolbar>
+            <ons-toolbar fixed-style>
+                <div class="left">
+                    <ons-button modifier="dark" ng-click="app.navi.popPage('registry.html');">Back</ons-button>
+                </div>
                 <div class="center">Registry</div>
             </ons-toolbar>
 
-            <p style="text-align: center">
-                <ons-button modifier="light" ng-click="app.navi.popPage('registry.html');">Back</ons-button>
-            </p>
+
         </ons-page>
     </ons-template>
 
     <ons-template id="hotel.html">
         <ons-page>
-            <ons-toolbar>
+            <ons-toolbar fixed-style>
+                <div class="left">
+                    <ons-button modifier="dark" ng-click="app.navi.popPage('hotel.html');">Back</ons-button>
+                </div>
                 <div class="center">Hotel</div>
             </ons-toolbar>
 
-            <p style="text-align: center">
-                <ons-button modifier="light" ng-click="app.navi.popPage('hotel.html');">Back</ons-button>
-            </p>
+
         </ons-page>
     </ons-template>
 
     <ons-template id="messenger.html">
-        <ons-page ng-controller="MessengerController">
-            <ons-toolbar>
+        <ons-page id="messenger-page" ng-controller="MessengerController">
+            <ons-toolbar fixed-style>
+                <div class="left">
+                    <ons-button modifier="dark" ng-click="app.navi.popPage('messenger.html'); stop();">Back</ons-button>
+                </div>
                 <div class="center">Messenger</div>
             </ons-toolbar>
-
-            <p style="text-align: center">
-                <ons-button modifier="light" ng-click="app.navi.popPage('messenger.html');">Back</ons-button>
-            </p>
 
             <label>
                 Enter Message:
                 <input type="text" id="message" name="message" ng-model="message" ng-Maxlength="150">
-            </label>
-
-            <label id="result"></label>
-
-            <p style="text-align: center">
                 <ons-button modifier="light" ng-click="submit()">Submit</ons-button>
-            </p>
+            </label>
 
             <div id='messageList'>
                 <ons-list style='position: relative; height: 300px;'>
@@ -222,14 +236,14 @@
     </ons-template>
 
     <ons-template id="photoBooth.html">
-        <ons-page ng-controller="TakePhotoController">
-            <ons-toolbar>
+        <ons-page id="photo-page" ng-controller="TakePhotoController">
+            <ons-toolbar fixed-style>
+                <div class="left">
+                    <ons-button modifier="dark" ng-click="app.navi.popPage('photoBooth.html');">Back</ons-button>
+                </div>
                 <div class="center">Photo Booth</div>
             </ons-toolbar>
 
-            <p style="text-align: center">
-                <ons-button modifier="light" ng-click="app.navi.popPage('photoBooth.html');">Back</ons-button>
-            </p>
 
             <p style="text-align: center">
                 <ons-button modifier="light" ng-click="takePicture()">Take Photo</ons-button>
@@ -254,13 +268,14 @@
 
     <ons-template id="directions.html">
         <ons-page ng-controller="DirectionsController">
-            <ons-toolbar>
+            <ons-toolbar fixed-style>
+                <div class="left">
+                    <ons-button modifier="dark" ng-click="app.navi.popPage('directions.html');">Back</ons-button>
+                </div>
                 <div class="center">Directions</div>
             </ons-toolbar>
 
-            <p style="text-align: center">
-                <ons-button modifier="light" ng-click="app.navi.popPage('directions.html');">Back</ons-button>
-            </p>
+
             <div class="directions-hotel" ng-click="launchNavigator(0)">
                 Hotel
             </div>

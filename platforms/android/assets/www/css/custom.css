@@ -1,16 +1,24 @@
 .page--full_bg__background {
    background-image:url('../img/background.jpg');
-   background-position: center center;
+  // background-position: center center;
    background-repeat: no-repeat;
    background-attachment: fixed;
-   background-size: cover;
+   background-size: 100%;
    background-color: #efefef;
+}
+
+ons-toolbar {
+    padding-bottom: 145px;
 }
 
 .main-buttons {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
+}
+
+.center {
+    text-align: center;
 }
 
 .party-women {postion: absolute; top: 0; height: 50%; width: 100%; background-color:red;}

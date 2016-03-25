@@ -1,13 +1,29 @@
-app.controller('TakePhotoController', function($scope, $http) {
+app.controller('TakePhotoController', function($scope, $http, $interval) {
 
     var controller = this;
+    var timer;
 
-    $http.get('http://www.evolutiondigitalstl.com/svc/weddingImages.php/getImages').success(function(data) {
-            controller.count = data.length;
-            controller.data = data;
-        }).error(function() {
-            alert('error');
-        });
+    $(document.body).on("pageinit", "#photo-page", function() {
+        $scope.start();
+    });
+
+    $scope.start = function() {
+        timer = $interval(function() {
+            $http.get('http://www.evolutiondigitalstl.com/svc/weddingImages.php/getImages').success(function(data) {
+                controller.count = data.length;
+                controller.data = data;
+            }).error(function() {
+                alert('error');
+            });
+        }, 5000);
+    }
+
+    $scope.stop = function() {
+        if (angular.isDefined(timer)) {
+            $interval.cancel(timer);
+            timer = undefined;
+        }
+    }
 
     $scope.takePicture = function(){
         navigator.camera.getPicture(onSuccess, onFail, {
@@ -67,6 +83,8 @@ app.controller('TakePhotoController', function($scope, $http) {
         options.params = {}; // if we need to send parameters to the server request
         var ft = new FileTransfer();
         ft.upload(fileURI, encodeURI("http://www.evolutiondigitalstl.com/svc/weddingImages.php"), win, fail, options);
+        $scope.stop();
+        $scope.start();
     }
 
     $scope.GalleryDelegate = {

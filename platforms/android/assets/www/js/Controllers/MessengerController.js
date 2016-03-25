@@ -1,14 +1,31 @@
-app.controller('MessengerController', function($scope, $http) {
+app.controller('MessengerController', function($scope, $http, $interval) {
 
     var controller = this;
+    var timer;
 
-    $http.get('http://www.evolutiondigitalstl.com/svc/weddingMessages.php/getMessages').success(function(data) {
-        controller.count = data.length;
-        controller.data = data;
-    }).error(function() {
-        //itemScope.item.desc = 'No bacon lorem ipsum';
-        //itemScope.item.label = 'No bacon';
-    });
+           $(document.body).on("pageinit", "#messenger-page", function() {
+               $scope.start();
+           });
+
+    $scope.start = function() {
+        timer = $interval(function() {
+            $http.get('http://www.evolutiondigitalstl.com/svc/weddingMessages.php/getMessages').success(function(data) {
+                controller.count = data.length;
+                controller.data = data;
+            }).error(function() {
+                //itemScope.item.desc = 'No bacon lorem ipsum';
+                //itemScope.item.label = 'No bacon';
+            });
+            console.log('new message');
+        }, 5000);
+    }
+
+    $scope.stop = function() {
+        if (angular.isDefined(timer)) {
+            $interval.cancel(timer);
+            timer = undefined;
+        }
+    }
 
     $scope.submit = function() {
 
@@ -18,12 +35,11 @@ app.controller('MessengerController', function($scope, $http) {
             date: getDate(),
             time: getTime()
         };
-        console.log(data.user);
-        console.log(data.message);
-        console.log(data.date);
-        console.log(data.time);
+
         $.post( "http://www.evolutiondigitalstl.com/svc/weddingMessages.php", function( data ) {
-          $( "#label" ).html( data );
+            alert("Message Sent");
+            $scope.stop();
+            $scope.start();
         });
     }
 
