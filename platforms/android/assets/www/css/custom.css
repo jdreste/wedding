@@ -21,5 +21,29 @@ ons-toolbar {
     text-align: center;
 }
 
-.party-women {postion: absolute; top: 0; height: 50%; width: 100%; background-color:red;}
-.party-men {postion: absolute; bottom: 0; height: 50%; width: 100%; background-color:blue;}
+.party-women {postion: absolute; top: 0; height: 50%; width: 100%; background-color:purple;}
+.party-men {postion: absolute; bottom: 0; height: 50%; width: 100%; background-color:grey;}
+
+.directions-hotel {
+    postion: absolute;
+    top: 0;
+    height: 25%;
+    width: 100%;
+    background-color:purple;
+}
+
+.directions-reception {
+    postion: absolute;
+    top: 0;
+    height: 25%;
+    width: 100%;
+    background-color:green;
+}
+
+.directions-wedding {
+    postion: absolute;
+    top: 0;
+    height: 25%;
+    width: 100%;
+    background-color:grey;
+}

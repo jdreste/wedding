@@ -3,9 +3,17 @@ app.controller('MessengerController', function($scope, $http, $interval) {
     var controller = this;
     var timer;
 
-           $(document.body).on("pageinit", "#messenger-page", function() {
-               $scope.start();
-           });
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    $(document.body).on("pageinit", "#messenger-page", function() {
+        $scope.start();
+    });
+
+    function onDeviceReady(){
+        document.addEventListener("backbutton", function(e){
+            $scope.stop();
+        }, false);
+    }
 
     $scope.start = function() {
         timer = $interval(function() {

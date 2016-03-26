@@ -51,6 +51,7 @@
         <script type="text/javascript" src="js/Controllers/TakePhotoController.js"></script>
         <script type="text/javascript" src="js/Controllers/DirectionsController.js"></script>
         <script type="text/javascript" src="js/Controllers/MessengerController.js"></script>
+        <script type="text/javascript" src="js/Controllers/MenController.js"></script>
 
     </head>
     <body>
@@ -63,11 +64,11 @@
 
             <div class="modalCodePrompt">
                 <ons-modal var="codeModal">
-                    <label>Enter your code:
+                    <label>Enter the wedding date (MM/DD/YY):
                         <input ng-model="txtCode" type="text" ng-maxlength="10" required="true">
                     </label>
                     <ons-button id="close-modal" ng-click="closeCodeModal()">Enter</ons-button>
-                    <label id="codeValidationError" style="display: none; color: red;">Invalid!  Please re-enter code.</label>
+                    <label id="codeValidationError" style="display: none; color: red;">Invalid!  Please re-enter date.</label>
                 </ons-modal>
             </div>
 
@@ -116,9 +117,10 @@
             </ons-toolbar>
 			
 			<div class="party-women" ng-click="app.navi.pushPage('listPartyWomen.html');">
+                <label>Women</label>
             </div>
             <div class="party-men" ng-click="app.navi.pushPage('listPartyMen.html');">
-            
+                <label>Men</label>
             </div>
             
         </ons-page>
@@ -134,8 +136,8 @@
             </ons-toolbar>
             
             <ons-list style="margin: -1px 0">
-                <ons-list-item modifier="chevron" class="item" ng-repeat="man in men" ng-click="">
-                    <ons-row>
+                <ons-list-item modifier="chevron" class="item" ng-repeat="man in men" ng-click="app.navi.pushPage('men.html');">
+                    <ons-row ng-click="setMan(man)">
                         <ons-col width="60px">
                             <div class="item-thum"></div>
                         </ons-col>
@@ -211,7 +213,7 @@
         <ons-page id="messenger-page" ng-controller="MessengerController">
             <ons-toolbar fixed-style>
                 <div class="left">
-                    <ons-button modifier="dark" ng-click="app.navi.popPage('messenger.html'); stop();">Back</ons-button>
+                    <ons-button modifier="dark" ng-click="stop(); app.navi.popPage('messenger.html')">Back</ons-button>
                 </div>
                 <div class="center">Messenger</div>
             </ons-toolbar>
@@ -226,6 +228,7 @@
                 <ons-list style='position: relative; height: 300px;'>
                     <ons-list-item ons-lazy-repeat="MessageDelegate">
                         <span>{{item.message}}</span>
+                        <span>{{item.user}}</span>
                         <span>{{item.date}}</span>
                         <span>{{item.time}}</span>
                     </ons-list-item>
@@ -239,7 +242,7 @@
         <ons-page id="photo-page" ng-controller="TakePhotoController">
             <ons-toolbar fixed-style>
                 <div class="left">
-                    <ons-button modifier="dark" ng-click="app.navi.popPage('photoBooth.html');">Back</ons-button>
+                    <ons-button modifier="dark" ng-click="stop(); app.navi.popPage('photoBooth.html')">Back</ons-button>
                 </div>
                 <div class="center">Photo Booth</div>
             </ons-toolbar>
@@ -250,7 +253,7 @@
             </p>
             <div id="picture"></div>
             <div class="pic-meta"></div>
-            <p style="text-align: center">
+            <p class="center">
                 <ons-button modifier="light" ng-click="submit()">Submit</ons-button>
             </p>
 
@@ -277,14 +280,32 @@
 
 
             <div class="directions-hotel" ng-click="launchNavigator(0)">
-                Hotel
+                <label>Hotel</label>
             </div>
             <div class="directions-reception" ng-click="launchNavigator(1)">
-                Reception
+                <label>Reception</label>
             </div>
             <div class="directions-wedding" ng-click="launchNavigator(2)">
-                Wedding
+                <label>Wedding</label>
             </div>
+
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="men.html">
+        <ons-page ng-controller="MenController">
+            <ons-toolbar fixed-style>
+                <div class="left">
+                    <ons-button modifier="dark" ng-click="app.navi.popPage('men.html');">Back</ons-button>
+                </div>
+                <div class="center">{{shareDataFactory.role}}</div>
+            </ons-toolbar>
+
+            <h2 class="center">{{shareDataFactory.name}}</h2>
+            <p>{{shareDataFactory.background}}</p>
+
+
+
 
         </ons-page>
     </ons-template>

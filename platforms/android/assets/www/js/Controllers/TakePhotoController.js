@@ -3,6 +3,14 @@ app.controller('TakePhotoController', function($scope, $http, $interval) {
     var controller = this;
     var timer;
 
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    function onDeviceReady(){
+        document.addEventListener("backbutton", function(e){
+            $scope.stop();
+        }, false);
+    }
+
     $(document.body).on("pageinit", "#photo-page", function() {
         $scope.start();
     });

@@ -13,12 +13,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd206ef7-6422-448f-a0a1-e57765ff073d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/Controllers/MainController.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/Controllers/MainController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/Controllers/MenController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/AndroidManifest.xml" afterPath="$PROJECT_DIR$/platforms/android/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/Controllers/ManListController.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/Controllers/ManListController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/Controllers/MessengerController.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/Controllers/MessengerController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/Controllers/TakePhotoController.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/Controllers/TakePhotoController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/js/app.js" afterPath="$PROJECT_DIR$/platforms/android/assets/www/js/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/res/xml/config.xml" afterPath="$PROJECT_DIR$/platforms/android/res/xml/config.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/custom.css" afterPath="$PROJECT_DIR$/platforms/android/assets/www/css/custom.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/index.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/data/men.json" afterPath="$PROJECT_DIR$/platforms/android/assets/www/data/men.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="wedding.iws" />
@@ -41,11 +46,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TakePhotoController.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TakePhotoController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/Controllers/TakePhotoController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.34313726">
-              <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/platforms/android/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="9" column="53" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -55,7 +70,7 @@
         <entry file="file://$PROJECT_DIR$/platforms/android/res/xml/config.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="54" selection-start-line="3" selection-start-column="54" selection-end-line="3" selection-end-column="54" />
+              <caret line="2" column="48" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -65,37 +80,26 @@
         <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/Controllers/MessengerController.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="27" column="5" selection-start-line="9" selection-start-column="4" selection-end-line="27" selection-end-column="5" />
+              <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dateTime.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/model/dateTime.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-41.205883">
-              <caret line="228" column="50" selection-start-line="228" selection-start-column="50" selection-end-line="228" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.68487394">
+              <caret line="255" column="30" selection-start-line="255" selection-start-column="30" selection-end-line="255" selection-end-column="30" />
               <folding>
-                <element signature="e#3894#3928#0" expanded="true" />
-                <element signature="e#4422#4456#0" expanded="true" />
-                <element signature="e#6944#6966#0" expanded="true" />
-                <element signature="e#8122#8144#0" expanded="true" />
-                <element signature="e#10399#10441#0" expanded="true" />
-                <element signature="e#11214#11240#0" expanded="true" />
-                <element signature="e#11446#11472#0" expanded="true" />
-                <element signature="e#11634#11676#0" expanded="true" />
-                <element signature="e#11777#11796#0" expanded="true" />
+                <element signature="e#3999#4033#0" expanded="true" />
+                <element signature="e#4527#4561#0" expanded="true" />
+                <element signature="e#7108#7130#0" expanded="true" />
+                <element signature="e#8339#8361#0" expanded="true" />
+                <element signature="e#10615#10657#0" expanded="true" />
+                <element signature="e#11488#11514#0" expanded="true" />
+                <element signature="e#11896#11938#0" expanded="true" />
+                <element signature="e#12039#12058#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -105,7 +109,37 @@
         <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/css/custom.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+              <caret line="23" column="86" selection-start-line="23" selection-start-column="86" selection-end-line="23" selection-end-column="86" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MenController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/Controllers/MenController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ManListController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/Controllers/ManListController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -143,10 +177,15 @@
         <option value="$PROJECT_DIR$/platforms/android/assets/www/js/model/dateTime.js" />
         <option value="$PROJECT_DIR$/platforms/android/assets/www/js/Controllers/MainController.js" />
         <option value="$PROJECT_DIR$/platforms/android/res/xml/config.xml" />
-        <option value="$PROJECT_DIR$/platforms/android/assets/www/css/custom.css" />
-        <option value="$PROJECT_DIR$/platforms/android/assets/www/index.html" />
+        <option value="$PROJECT_DIR$/platforms/android/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/platforms/android/assets/www/js/Controllers/MessengerController.js" />
         <option value="$PROJECT_DIR$/platforms/android/assets/www/js/Controllers/TakePhotoController.js" />
+        <option value="$PROJECT_DIR$/platforms/android/assets/www/js/app.js" />
+        <option value="$PROJECT_DIR$/platforms/android/assets/www/js/Controllers/ManListController.js" />
+        <option value="$PROJECT_DIR$/platforms/android/assets/www/js/Controllers/MenController.js" />
+        <option value="$PROJECT_DIR$/platforms/android/assets/www/data/men.json" />
+        <option value="$PROJECT_DIR$/platforms/android/assets/www/css/custom.css" />
+        <option value="$PROJECT_DIR$/platforms/android/assets/www/index.html" />
       </list>
     </option>
   </component>
@@ -534,8 +573,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Projects\wedding\platforms\android\assets\www\data" />
       <recent name="C:\Projects\wedding\platforms\android\assets\www\js\Controllers" />
+      <recent name="C:\Projects\wedding\platforms\android\assets\www\data" />
       <recent name="C:\Projects\wedding\platforms\android\assets\www\js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -735,7 +774,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="7" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32883435" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32760736" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -786,22 +825,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/Controllers/TakePhotoController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="50" column="40" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="80" selection-start-line="7" selection-start-column="80" selection-end-line="7" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/res/xml/config.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -815,15 +838,14 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="163" selection-start-line="28" selection-start-column="163" selection-end-line="28" selection-end-column="163" />
           <folding>
-            <element signature="e#3894#3928#0" expanded="true" />
-            <element signature="e#4422#4456#0" expanded="true" />
-            <element signature="e#6944#6966#0" expanded="true" />
-            <element signature="e#8122#8144#0" expanded="true" />
-            <element signature="e#10399#10441#0" expanded="true" />
-            <element signature="e#11214#11240#0" expanded="true" />
-            <element signature="e#11446#11472#0" expanded="true" />
-            <element signature="e#11634#11676#0" expanded="true" />
-            <element signature="e#11777#11796#0" expanded="true" />
+            <element signature="e#3999#4033#0" expanded="true" />
+            <element signature="e#4527#4561#0" expanded="true" />
+            <element signature="e#7108#7130#0" expanded="true" />
+            <element signature="e#8339#8361#0" expanded="true" />
+            <element signature="e#10615#10657#0" expanded="true" />
+            <element signature="e#11488#11514#0" expanded="true" />
+            <element signature="e#11896#11938#0" expanded="true" />
+            <element signature="e#12039#12058#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -864,15 +886,14 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
           <folding>
-            <element signature="e#3894#3928#0" expanded="true" />
-            <element signature="e#4422#4456#0" expanded="true" />
-            <element signature="e#6944#6966#0" expanded="true" />
-            <element signature="e#8122#8144#0" expanded="true" />
-            <element signature="e#10399#10441#0" expanded="true" />
-            <element signature="e#11214#11240#0" expanded="true" />
-            <element signature="e#11446#11472#0" expanded="true" />
-            <element signature="e#11634#11676#0" expanded="true" />
-            <element signature="e#11777#11796#0" expanded="true" />
+            <element signature="e#3999#4033#0" expanded="true" />
+            <element signature="e#4527#4561#0" expanded="true" />
+            <element signature="e#7108#7130#0" expanded="true" />
+            <element signature="e#8339#8361#0" expanded="true" />
+            <element signature="e#10615#10657#0" expanded="true" />
+            <element signature="e#11488#11514#0" expanded="true" />
+            <element signature="e#11896#11938#0" expanded="true" />
+            <element signature="e#12039#12058#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -905,15 +926,14 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
           <folding>
-            <element signature="e#3894#3928#0" expanded="true" />
-            <element signature="e#4422#4456#0" expanded="true" />
-            <element signature="e#6944#6966#0" expanded="true" />
-            <element signature="e#8122#8144#0" expanded="true" />
-            <element signature="e#10399#10441#0" expanded="true" />
-            <element signature="e#11214#11240#0" expanded="true" />
-            <element signature="e#11446#11472#0" expanded="true" />
-            <element signature="e#11634#11676#0" expanded="true" />
-            <element signature="e#11777#11796#0" expanded="true" />
+            <element signature="e#3999#4033#0" expanded="true" />
+            <element signature="e#4527#4561#0" expanded="true" />
+            <element signature="e#7108#7130#0" expanded="true" />
+            <element signature="e#8339#8361#0" expanded="true" />
+            <element signature="e#10615#10657#0" expanded="true" />
+            <element signature="e#11488#11514#0" expanded="true" />
+            <element signature="e#11896#11938#0" expanded="true" />
+            <element signature="e#12039#12058#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -946,15 +966,14 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
           <folding>
-            <element signature="e#3894#3928#0" expanded="true" />
-            <element signature="e#4422#4456#0" expanded="true" />
-            <element signature="e#6944#6966#0" expanded="true" />
-            <element signature="e#8122#8144#0" expanded="true" />
-            <element signature="e#10399#10441#0" expanded="true" />
-            <element signature="e#11214#11240#0" expanded="true" />
-            <element signature="e#11446#11472#0" expanded="true" />
-            <element signature="e#11634#11676#0" expanded="true" />
-            <element signature="e#11777#11796#0" expanded="true" />
+            <element signature="e#3999#4033#0" expanded="true" />
+            <element signature="e#4527#4561#0" expanded="true" />
+            <element signature="e#7108#7130#0" expanded="true" />
+            <element signature="e#8339#8361#0" expanded="true" />
+            <element signature="e#10615#10657#0" expanded="true" />
+            <element signature="e#11488#11514#0" expanded="true" />
+            <element signature="e#11896#11938#0" expanded="true" />
+            <element signature="e#12039#12058#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -987,15 +1006,14 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
           <folding>
-            <element signature="e#3894#3928#0" expanded="true" />
-            <element signature="e#4422#4456#0" expanded="true" />
-            <element signature="e#6944#6966#0" expanded="true" />
-            <element signature="e#8122#8144#0" expanded="true" />
-            <element signature="e#10399#10441#0" expanded="true" />
-            <element signature="e#11214#11240#0" expanded="true" />
-            <element signature="e#11446#11472#0" expanded="true" />
-            <element signature="e#11634#11676#0" expanded="true" />
-            <element signature="e#11777#11796#0" expanded="true" />
+            <element signature="e#3999#4033#0" expanded="true" />
+            <element signature="e#4527#4561#0" expanded="true" />
+            <element signature="e#7108#7130#0" expanded="true" />
+            <element signature="e#8339#8361#0" expanded="true" />
+            <element signature="e#10615#10657#0" expanded="true" />
+            <element signature="e#11488#11514#0" expanded="true" />
+            <element signature="e#11896#11938#0" expanded="true" />
+            <element signature="e#12039#12058#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1028,15 +1046,14 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="223" column="60" selection-start-line="223" selection-start-column="60" selection-end-line="223" selection-end-column="60" />
           <folding>
-            <element signature="e#3894#3928#0" expanded="true" />
-            <element signature="e#4422#4456#0" expanded="true" />
-            <element signature="e#6944#6966#0" expanded="true" />
-            <element signature="e#8122#8144#0" expanded="true" />
-            <element signature="e#10399#10441#0" expanded="true" />
-            <element signature="e#11214#11240#0" expanded="true" />
-            <element signature="e#11446#11472#0" expanded="true" />
-            <element signature="e#11634#11676#0" expanded="true" />
-            <element signature="e#11777#11796#0" expanded="true" />
+            <element signature="e#3999#4033#0" expanded="true" />
+            <element signature="e#4527#4561#0" expanded="true" />
+            <element signature="e#7108#7130#0" expanded="true" />
+            <element signature="e#8339#8361#0" expanded="true" />
+            <element signature="e#10615#10657#0" expanded="true" />
+            <element signature="e#11488#11514#0" expanded="true" />
+            <element signature="e#11896#11938#0" expanded="true" />
+            <element signature="e#12039#12058#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1069,15 +1086,14 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="37" column="79" selection-start-line="37" selection-start-column="79" selection-end-line="37" selection-end-column="79" />
           <folding>
-            <element signature="e#3894#3928#0" expanded="true" />
-            <element signature="e#4422#4456#0" expanded="true" />
-            <element signature="e#6944#6966#0" expanded="true" />
-            <element signature="e#8122#8144#0" expanded="true" />
-            <element signature="e#10399#10441#0" expanded="true" />
-            <element signature="e#11214#11240#0" expanded="true" />
-            <element signature="e#11446#11472#0" expanded="true" />
-            <element signature="e#11634#11676#0" expanded="true" />
-            <element signature="e#11777#11796#0" expanded="true" />
+            <element signature="e#3999#4033#0" expanded="true" />
+            <element signature="e#4527#4561#0" expanded="true" />
+            <element signature="e#7108#7130#0" expanded="true" />
+            <element signature="e#8339#8361#0" expanded="true" />
+            <element signature="e#10615#10657#0" expanded="true" />
+            <element signature="e#11488#11514#0" expanded="true" />
+            <element signature="e#11896#11938#0" expanded="true" />
+            <element signature="e#12039#12058#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1086,13 +1102,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/data/men.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1114,14 +1123,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.7987804">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="80" selection-start-line="7" selection-start-column="80" selection-end-line="7" selection-end-column="80" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1160,13 +1161,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/Controllers/ManListController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29912025">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/data/messages.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.89495796">
@@ -1198,22 +1192,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/res/xml/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="54" selection-start-line="3" selection-start-column="54" selection-end-line="3" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/css/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/Controllers/MainController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1222,37 +1200,92 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/platforms/android/res/xml/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="48" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platforms/android/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="53" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/Controllers/MessengerController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="5" selection-start-line="9" selection-start-column="4" selection-end-line="27" selection-end-column="5" />
+          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/Controllers/TakePhotoController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/data/men.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5777311">
+          <caret line="41" column="3" selection-start-line="41" selection-start-column="3" selection-end-line="41" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/Controllers/MenController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/Controllers/ManListController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/css/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="86" selection-start-line="23" selection-start-column="86" selection-end-line="23" selection-end-column="86" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-41.205883">
-          <caret line="228" column="50" selection-start-line="228" selection-start-column="50" selection-end-line="228" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.68487394">
+          <caret line="255" column="30" selection-start-line="255" selection-start-column="30" selection-end-line="255" selection-end-column="30" />
           <folding>
-            <element signature="e#3894#3928#0" expanded="true" />
-            <element signature="e#4422#4456#0" expanded="true" />
-            <element signature="e#6944#6966#0" expanded="true" />
-            <element signature="e#8122#8144#0" expanded="true" />
-            <element signature="e#10399#10441#0" expanded="true" />
-            <element signature="e#11214#11240#0" expanded="true" />
-            <element signature="e#11446#11472#0" expanded="true" />
-            <element signature="e#11634#11676#0" expanded="true" />
-            <element signature="e#11777#11796#0" expanded="true" />
+            <element signature="e#3999#4033#0" expanded="true" />
+            <element signature="e#4527#4561#0" expanded="true" />
+            <element signature="e#7108#7130#0" expanded="true" />
+            <element signature="e#8339#8361#0" expanded="true" />
+            <element signature="e#10615#10657#0" expanded="true" />
+            <element signature="e#11488#11514#0" expanded="true" />
+            <element signature="e#11896#11938#0" expanded="true" />
+            <element signature="e#12039#12058#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/platforms/android/assets/www/js/Controllers/TakePhotoController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34313726">
-          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>

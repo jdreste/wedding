@@ -1,42 +1,47 @@
 [
   {
     "name": "Joe Dreste",
-    "role": "Best Man"
-  },
-  {
-    "name": "Keola Aki",
-    "role": "Groomsman"
-  },
-  {
-    "name": "Shawn Cothron",
-    "role": "Groomsman"
-  },
-  {
-    "name": "Luther Ester",
-    "role": "Groomsman"
+    "role": "Best Man",
+    "background": "fad;jlasdjflajdf;la;sdflkajf;lask;jflasjf;lasfl;ajsf;lajsdlkajs;lfjasdlfjals;jadj;flasdjf"
   },
   {
     "name": "Nick LoPiccolo",
-    "role": "Groomsman"
+    "role": "Groomsman",
+    "background": "fad;jlasdjflajdf;la;sdflkajf;lask;jflasjf;lasfl;ajsf;lajsdlkajs;lfjasdlfjals;jadj;flasdjf"
+  },
+  {
+    "name": "Keola Aki",
+    "role": "Groomsman",
+    "background": "fad;jlasdjflajdf;la;sdflkajf;lask;jflasjf;lasfl;ajsf;lajsdlkajs;lfjasdlfjals;jadj;flasdjf"
+  },
+  {
+    "name": "Shawn Cothron",
+    "role": "Groomsman",
+    "background": "fad;jlasdjflajdf;la;sdflkajf;lask;jflasjf;lasfl;ajsf;lajsdlkajs;lfjasdlfjals;jadj;flasdjf"
+  },
+  {
+    "name": "Luther Ester",
+    "role": "Groomsman",
+    "background": "fad;jlasdjflajdf;la;sdflkajf;lask;jflasjf;lasfl;ajsf;lajsdlkajs;lfjasdlfjals;jadj;flasdjf"
   },
   {
     "name": "Doug Wehmeyer",
-    "role": "Groomsman"
+    "role": "Groomsman",
+    "background": "fad;jlasdjflajdf;la;sdflkajf;lask;jflasjf;lasfl;ajsf;lajsdlkajs;lfjasdlfjals;jadj;flasdjf"
   },
   {
     "name": "Jim Borawski",
-    "role": "Usher"
+    "role": "Usher",
+    "background": "fad;jlasdjflajdf;la;sdflkajf;lask;jflasjf;lasfl;ajsf;lajsdlkajs;lfjasdlfjals;jadj;flasdjf"
   },
   {
     "name": "Joe Borawski",
-    "role": "Usher"
-  },
-  {
-    "name": "Brian Schwartz",
-    "role": "Usher"
+    "role": "Usher",
+    "background": "fad;jlasdjflajdf;la;sdflkajf;lask;jflasjf;lasfl;ajsf;lajsdlkajs;lfjasdlfjals;jadj;flasdjf"
   },
   {
     "name": "Michael Solakian",
-    "role": "Usher"
+    "role": "Usher",
+    "background": "fad;jlasdjflajdf;la;sdflkajf;lask;jflasjf;lasfl;ajsf;lajsdlkajs;lfjasdlfjals;jadj;flasdjf"
   }
 ]
