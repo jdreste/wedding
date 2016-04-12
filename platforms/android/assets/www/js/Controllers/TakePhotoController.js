@@ -3,6 +3,10 @@ app.controller('TakePhotoController', function($scope, $http, $interval) {
     var controller = this;
     var timer;
 
+    $scope.isDisabled = true;
+    $scope.showSpinner = false;
+    $scope.pictureShown = false;
+
     document.addEventListener("deviceready", onDeviceReady, false);
 
     function onDeviceReady(){
@@ -17,9 +21,11 @@ app.controller('TakePhotoController', function($scope, $http, $interval) {
 
     $scope.start = function() {
         timer = $interval(function() {
+                $scope.showSpinner = true;
             $http.get('http://www.evolutiondigitalstl.com/svc/weddingImages.php/getImages').success(function(data) {
                 controller.count = data.length;
                 controller.data = data;
+                $scope.showSpinner = false;
             }).error(function() {
                 alert('error');
             });
@@ -40,9 +46,18 @@ app.controller('TakePhotoController', function($scope, $http, $interval) {
         });
     }
 
+    $scope.clearImage = function() {
+        $scope.picture = null;
+        $scope.pictureShown = false;
+    }
+
     function onSuccess(imageData) {
         controller.image = "data:image/jpeg;base64," + imageData;
-        $('#picture').html('<img height="150" width="150" src="' + controller.image + '"/>');
+        $scope.pictureShown = true;
+        $scope.picture = controller.image;
+       // $('#picture').html('<img height="150" width="150" src="' + controller.image + '"/>');
+        $scope.isDisabled = false;
+        $scope.pictureShown = true;
     }
 
     function onFail(message) {
@@ -88,11 +103,12 @@ app.controller('TakePhotoController', function($scope, $http, $interval) {
         options.fileKey = "file";
         options.fileName = fileURI.substr(fileURI.lastIndexOf('/') + 1);
         options.mimeType = "image/jpeg";
-        options.params = {}; // if we need to send parameters to the server request
         var ft = new FileTransfer();
-        ft.upload(fileURI, encodeURI("http://www.evolutiondigitalstl.com/svc/weddingImages.php"), win, fail, options);
+        ft.upload(fileURI, encodeURI("http://www.evolutiondigitalstl.com/svc/weddingImages.php/addImage"), win, fail, options);
         $scope.stop();
         $scope.start();
+        //$('#picture').html("");
+        $scope.pictureShown = false;
     }
 
     $scope.GalleryDelegate = {
@@ -100,13 +116,15 @@ app.controller('TakePhotoController', function($scope, $http, $interval) {
          // if (!itemScope.item) {
           //  itemScope.canceler = $q.defer();
             itemScope.item = {
-                id: '',
-                filename: '',
                 sender: '',
+                filename: '',
+                date: '',
+                time: ''
             };
-            itemScope.item.id = controller.data[index].id;
-            itemScope.item.filename = controller.data[index].filename;
             itemScope.item.sender = controller.data[index].sender;
+            itemScope.item.filename = controller.data[index].filename;
+            itemScope.item.date = controller.data[index].date;
+            itemScope.item.time = controller.data[index].time;
        //   }
         },
         countItems: function() {

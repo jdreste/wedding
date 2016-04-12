@@ -32,6 +32,7 @@
         <link rel="stylesheet" type="text/css" href="libs/onsen/onsenui.css">
         <link rel="stylesheet" type="text/css" href="libs/onsen/onsen-css-components.css"/>
         <link rel="stylesheet" type="text/css" href="libs/onsen/onsen-css-components-purple-theme.css">
+        <link rel="stylesheet" type="text/css" href="libs/onsen/angular/angular-csp.css">
         <link rel="stylesheet" type="text/css" href="css/custom.css">
 
 		<!-- Javascript -->
@@ -217,12 +218,20 @@
                 </div>
                 <div class="center">Messenger</div>
             </ons-toolbar>
+            <form name="msgForm">
+                <label>
+                    Enter Message:
+                    <input type="text" id="message" name="message" ng-model="message" ng-Maxlength="150" required />
+                    <ons-button modifier="light" ng-disabled="msgForm.$invalid" ng-click="submit()">Submit</ons-button>
+                </label>
+            </form>
 
-            <label>
-                Enter Message:
-                <input type="text" id="message" name="message" ng-model="message" ng-Maxlength="150">
-                <ons-button modifier="light" ng-click="submit()">Submit</ons-button>
-            </label>
+
+            <div ng-show="showSpinner" class='center'>
+                <ons-icon icon='fa-spinner' spin='true'></ons-icon>
+                <label>Loading more messages...</label>
+            </div>
+
 
             <div id='messageList'>
                 <ons-list style='position: relative; height: 300px;'>
@@ -248,20 +257,29 @@
             </ons-toolbar>
 
 
-            <p style="text-align: center">
+            <p class="center">
                 <ons-button modifier="light" ng-click="takePicture()">Take Photo</ons-button>
             </p>
-            <div id="picture"></div>
+
+            <img ng-src="{{picture}}" ng-show="pictureShown" height="150" width="150"/>
             <div class="pic-meta"></div>
+
             <p class="center">
-                <ons-button modifier="light" ng-click="submit()">Submit</ons-button>
+                <ons-button modifier="light" ng-disabled="isDisabled" ng-click="submit()">Submit</ons-button>
             </p>
+
+            <div ng-show="showSpinner" class='center'>
+                <ons-icon icon='fa-spinner' spin='true'></ons-icon>
+                <label>Loading more photos...</label>
+            </div>
 
             <div id='gallery'>
                 <ons-list style='position: relative; height: 300px;'>
                     <ons-list-item ons-lazy-repeat="GalleryDelegate">
-                        <img style="width:50px;" src="http://www.evolutiondigitalstl.com/uploads/{{item.filename}}.jpg"/>
+                        <img style="width:50px;" ng-src="http://www.evolutiondigitalstl.com/uploads/{{item.filename}}.jpg"/>
                         <span>{{item.sender}}</span>
+                        <span>{{item.date}}</span>
+                        <span>{{item.time}}</span>
                     </ons-list-item>
                 </ons-list>
             </div>

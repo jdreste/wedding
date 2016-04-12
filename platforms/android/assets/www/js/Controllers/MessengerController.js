@@ -3,6 +3,8 @@ app.controller('MessengerController', function($scope, $http, $interval) {
     var controller = this;
     var timer;
 
+    $scope.showSpinner = false;
+
     document.addEventListener("deviceready", onDeviceReady, false);
 
     $(document.body).on("pageinit", "#messenger-page", function() {
@@ -17,9 +19,11 @@ app.controller('MessengerController', function($scope, $http, $interval) {
 
     $scope.start = function() {
         timer = $interval(function() {
-            $http.get('http://www.evolutiondigitalstl.com/svc/weddingMessages.php/getMessages').success(function(data) {
+            $scope.showSpinner = true;
+            $http.get('http://www.evolutiondigitalstl.com/svc/weddingImages.php/getMessages').success(function(data) {
                 controller.count = data.length;
                 controller.data = data;
+                $scope.showSpinner = false;
             }).error(function() {
                 //itemScope.item.desc = 'No bacon lorem ipsum';
                 //itemScope.item.label = 'No bacon';
@@ -38,17 +42,19 @@ app.controller('MessengerController', function($scope, $http, $interval) {
     $scope.submit = function() {
 
         var data = {
-            message: $('#message').val(),
+            message: $scope.message,
             user: localStorage.getItem("userName"),
             date: getDate(),
             time: getTime()
         };
 
-        $.post( "http://www.evolutiondigitalstl.com/svc/weddingMessages.php", function( data ) {
-            alert("Message Sent");
-            $scope.stop();
-            $scope.start();
+        $.ajax({
+            type: "POST",
+            data: JSON.stringify(data),
+            url: "http://www.evolutiondigitalstl.com/svc/weddingImages.php/addMessage",
+            contentType: "application/json"
         });
+        $scope.message = null;
     }
 
     $scope.MessageDelegate = {
@@ -61,6 +67,7 @@ app.controller('MessengerController', function($scope, $http, $interval) {
               time: '',
             };
             itemScope.item.message = controller.data[index].message;
+            itemScope.item.user = controller.data[index].user;
             itemScope.item.date = controller.data[index].date;
             itemScope.item.time = controller.data[index].time;
 

@@ -13,7 +13,16 @@ function getTime() {
     }
 
     var minutes = d.getMinutes();
+
+    if (minutes < 10) {
+        minutes = "0" + minutes;
+    }
+
     var seconds = d.getSeconds();
+
+    if (seconds < 10) {
+        seconds = "0" + seconds;
+    }
 
     function convertHours(h) {
         hour = h - 12;
