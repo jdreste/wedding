@@ -3,6 +3,10 @@ app.controller('MessengerController', function($scope, $http, $interval) {
     var controller = this;
     var timer;
 
+    var submitModal = function() {
+        modalMessage.show();
+    };
+
     $scope.showSpinner = false;
 
     document.addEventListener("deviceready", onDeviceReady, false);
@@ -28,7 +32,6 @@ app.controller('MessengerController', function($scope, $http, $interval) {
                 //itemScope.item.desc = 'No bacon lorem ipsum';
                 //itemScope.item.label = 'No bacon';
             });
-            console.log('new message');
         }, 5000);
     }
 
@@ -41,6 +44,8 @@ app.controller('MessengerController', function($scope, $http, $interval) {
 
     $scope.submit = function() {
 
+        submitModal();
+
         var data = {
             message: $scope.message,
             user: localStorage.getItem("userName"),
@@ -52,7 +57,11 @@ app.controller('MessengerController', function($scope, $http, $interval) {
             type: "POST",
             data: JSON.stringify(data),
             url: "http://www.evolutiondigitalstl.com/svc/weddingImages.php/addMessage",
-            contentType: "application/json"
+            contentType: "application/json",
+            success: function() {
+                modalMessage.hide();
+                alert('Message Submitted!');
+            }
         });
         $scope.message = null;
     }

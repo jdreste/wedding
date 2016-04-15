@@ -226,7 +226,6 @@
                 </label>
             </form>
 
-
             <div ng-show="showSpinner" class='center'>
                 <ons-icon icon='fa-spinner' spin='true'></ons-icon>
                 <label>Loading more messages...</label>
@@ -243,6 +242,12 @@
                     </ons-list-item>
                 </ons-list>
             </div>
+
+            <ons-modal var="modalMessage">
+                <ons-icon icon="fa-spinner" spin='true'></ons-icon>
+                <div class="modal-header">Please Wait</div>
+                <div class="modal-body">Submitting</div>
+            </ons-modal>
 
         </ons-page>
     </ons-template>
@@ -283,6 +288,12 @@
                     </ons-list-item>
                 </ons-list>
             </div>
+
+            <ons-modal var="modalPhoto">
+                <ons-icon icon="fa-spinner" spin='true'></ons-icon>
+                <div class="modal-header">Please Wait</div>
+                <div class="modal-body">Submitting</div>
+            </ons-modal>
 
         </ons-page>
     </ons-template>

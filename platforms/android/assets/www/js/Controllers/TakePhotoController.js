@@ -19,6 +19,10 @@ app.controller('TakePhotoController', function($scope, $http, $interval) {
         $scope.start();
     });
 
+    var submitModal = function() {
+        modalPhoto.show();
+    };
+
     $scope.start = function() {
         timer = $interval(function() {
                 $scope.showSpinner = true;
@@ -55,7 +59,6 @@ app.controller('TakePhotoController', function($scope, $http, $interval) {
         controller.image = "data:image/jpeg;base64," + imageData;
         $scope.pictureShown = true;
         $scope.picture = controller.image;
-       // $('#picture').html('<img height="150" width="150" src="' + controller.image + '"/>');
         $scope.isDisabled = false;
         $scope.pictureShown = true;
     }
@@ -80,21 +83,23 @@ app.controller('TakePhotoController', function($scope, $http, $interval) {
     var win = function (r) {
             clearCache();
             retries = 0;
-            alert('Done!');
+            modalPhoto.hide();
+            alert('Photo submitted!');
         }
 
-        var fail = function (error) {
-            if (retries == 0) {
-                retries ++
-                setTimeout(function() {
-                    onCapturePhoto(fileURI)
-                }, 1000)
-            } else {
-                retries = 0;
-                clearCache();
-                alert(error);
-            }
+    var fail = function (error) {
+        if (retries == 0) {
+            retries ++
+            setTimeout(function() {
+                onCapturePhoto(fileURI)
+            }, 1000)
+        } else {
+            retries = 0;
+            clearCache();
+            modalPhoto.hide();
+            alert(error);
         }
+    }
 
 
     var options = new FileUploadOptions();
@@ -107,7 +112,6 @@ app.controller('TakePhotoController', function($scope, $http, $interval) {
         ft.upload(fileURI, encodeURI("http://www.evolutiondigitalstl.com/svc/weddingImages.php/addImage"), win, fail, options);
         $scope.stop();
         $scope.start();
-        //$('#picture').html("");
         $scope.pictureShown = false;
     }
 
