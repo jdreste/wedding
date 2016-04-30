@@ -5,7 +5,6 @@ app.controller('ManListController', function($scope, $http, shareDataFactory) {
           	});
 
           	 $scope.setMan = function(man) {
-          	 console.log('here');
           	 	shareDataFactory.set(man);
              }
 

@@ -15,7 +15,7 @@ app.controller('TakePhotoController', function($scope, $http, $interval) {
         }, false);
     }
 
-    $(document.body).on("pageinit", "#photo-page", function() {
+    angular.element(document).ready(function () {
         $scope.start();
     });
 

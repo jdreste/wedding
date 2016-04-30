@@ -37,7 +37,6 @@
 
 		<!-- Javascript -->
         <script type="text/javascript" src="libs/onsen/angular/angular.js"></script>
-        <script type="text/javascript" src="libs/jquery-2.2.1.min.js"></script>
         <script type="text/javascript" src="libs/onsen/onsenui.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
@@ -225,7 +224,7 @@
             <form name="msgForm">
                 <label>
                     Enter Message:
-                    <input type="text" id="message" name="message" ng-model="message" ng-Maxlength="150" required />
+                    <input type="text" name="message" ng-model="message" ng-maxlength="150" ng-required="true" />
                     <ons-button modifier="light" ng-disabled="msgForm.$invalid" ng-click="submit()">Submit</ons-button>
                 </label>
             </form>

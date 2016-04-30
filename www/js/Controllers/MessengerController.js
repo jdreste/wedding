@@ -6,14 +6,14 @@ app.controller('MessengerController', function($scope, $http, $interval) {
     var submitModal = function() {
         modalMessage.show();
     };
+               
+    angular.element(document).ready(function () {
+        $scope.start();
+    });
 
     $scope.showSpinner = false;
 
     document.addEventListener("deviceready", onDeviceReady, false);
-
-    $(document.body).on("pageinit", "#messenger-page", function() {
-        $scope.start();
-    });
 
     function onDeviceReady(){
         document.addEventListener("backbutton", function(e){
@@ -29,8 +29,6 @@ app.controller('MessengerController', function($scope, $http, $interval) {
                 controller.data = data;
                 $scope.showSpinner = false;
             }).error(function() {
-                //itemScope.item.desc = 'No bacon lorem ipsum';
-                //itemScope.item.label = 'No bacon';
             });
         }, 5000);
     }
@@ -53,15 +51,17 @@ app.controller('MessengerController', function($scope, $http, $interval) {
             time: getTime()
         };
 
-        $.ajax({
-            type: "POST",
+        $http({
+            method: "POST",
             data: JSON.stringify(data),
-            url: "http://www.evolutiondigitalstl.com/svc/weddingImages.php/addMessage",
             contentType: "application/json",
-            success: function() {
-                modalMessage.hide();
-                alert('Message Submitted!');
-            }
+            url: "http://www.evolutiondigitalstl.com/svc/weddingImages.php/addMessage"
+        }).then(function successCallback(response) {
+            modalMessage.hide();
+            alert('Message Submitted!');
+        }, function errorCallback(response) {
+            modalMessage.hide();
+            alert('Message Submitted!');
         });
         $scope.message = null;
     }
