@@ -1,0 +1,34 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.evolution.weddingapp"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.evolution.weddingapp"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.evolution.weddingapp"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.evolution.weddingapp"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.evolution.weddingapp"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.evolution.weddingapp"
+        },
+        "uk.co.workingedge.phonegap.plugin.launchnavigator": {
+            "PACKAGE_NAME": "com.evolution.weddingapp"
+        }
+    }
+}
