@@ -51,7 +51,7 @@
         <script type="text/javascript" src="js/Controllers/TakePhotoController.js"></script>
         <script type="text/javascript" src="js/Controllers/DirectionsController.js"></script>
         <script type="text/javascript" src="js/Controllers/MessengerController.js"></script>
-        <script type="text/javascript" src="js/Controllers/MenController.js"></script>
+        <script type="text/javascript" src="js/Controllers/PersonController.js"></script>
 
     </head>
     <body>
@@ -120,10 +120,10 @@
                 <div class="center">Wedding Party</div>
             </ons-toolbar>
 			
-			<div class="party-women" ng-click="app.navi.pushPage('listPartyWomen.html');">
+			<div class="party-women center" ng-click="app.navi.pushPage('listPartyWomen.html');">
                 <label>Women</label>
             </div>
-            <div class="party-men" ng-click="app.navi.pushPage('listPartyMen.html');">
+            <div class="party-men center" ng-click="app.navi.pushPage('listPartyMen.html');">
                 <label>Men</label>
             </div>
             
@@ -140,7 +140,7 @@
             </ons-toolbar>
             
             <ons-list style="margin: -1px 0">
-                <ons-list-item modifier="chevron" class="item" ng-repeat="man in men" ng-click="app.navi.pushPage('men.html');">
+                <ons-list-item modifier="chevron" class="item" ng-repeat="man in men" ng-click="app.navi.pushPage('person.html');">
                     <ons-row ng-click="setMan(man)">
                         <ons-col width="60px">
                             <div class="item-thum"></div>
@@ -160,7 +160,7 @@
     </ons-template>
     
     <ons-template id="listPartyWomen.html">
-        <ons-page>
+        <ons-page ng-controller="WomanListController">
             <ons-toolbar fixed-style>
                 <div class="left">
                     <ons-button modifier="dark" ng-click="app.navi.popPage('listPartyWomen.html');">Back</ons-button>
@@ -169,8 +169,8 @@
             </ons-toolbar>
             
             <ons-list style="margin: -1px 0">
-                <ons-list-item modifier="chevron" class="item" ng-repeat="woman in women" ng-click="">
-                    <ons-row>
+                <ons-list-item modifier="chevron" class="item" ng-repeat="woman in women" ng-click="app.navi.pushPage('person.html');">
+                    <ons-row ng-click="setWoman(woman)">
                         <ons-col width="60px">
                             <div class="item-thum"></div>
                         </ons-col>
@@ -250,6 +250,9 @@
                 <ons-icon icon="fa-spinner" spin='true'></ons-icon>
                 <div class="modal-header">Please Wait</div>
                 <div class="modal-body">Submitting</div>
+                <div class="modal-footer">
+                    <ons-button modifier="cta" ng-click="cancel()">Cancel</ons-button>
+                </div>
             </ons-modal>
 
         </ons-page>
@@ -296,6 +299,9 @@
                 <ons-icon icon="fa-spinner" spin='true'></ons-icon>
                 <div class="modal-header">Please Wait</div>
                 <div class="modal-body">Submitting</div>
+                <div class="modal-footer">
+                    <ons-button modifier="cta" ng-click="cancel()">Cancel</ons-button>
+                </div>
             </ons-modal>
 
         </ons-page>
@@ -324,24 +330,20 @@
         </ons-page>
     </ons-template>
 
-    <ons-template id="men.html">
-        <ons-page ng-controller="MenController">
+    <ons-template id="person.html">
+        <ons-page ng-controller="PersonController">
             <ons-toolbar fixed-style>
                 <div class="left">
-                    <ons-button modifier="dark" ng-click="app.navi.popPage('men.html');">Back</ons-button>
+                    <ons-button modifier="dark" ng-click="app.navi.popPage('person.html');">Back</ons-button>
                 </div>
                 <div class="center">{{shareDataFactory.role}}</div>
             </ons-toolbar>
 
             <h2 class="center">{{shareDataFactory.name}}</h2>
-            <p>{{shareDataFactory.background}}</p>
-
-
-
+            <p class="center margins">{{shareDataFactory.background}}</p>
 
         </ons-page>
     </ons-template>
-
 
 
     <!--<ons-navigator var="mainnav">-->

@@ -1,6 +1,5 @@
 .page--full_bg__background {
    background-image:url('../img/background.jpg');
-  // background-position: center center;
    background-repeat: no-repeat;
    background-attachment: fixed;
    background-size: 100%;
@@ -21,8 +20,13 @@ ons-toolbar {
     text-align: center;
 }
 
-.party-women {postion: absolute; top: 0; height: 50%; width: 100%; background-color:purple;}
-.party-men {postion: absolute; bottom: 0; height: 50%; width: 100%; background-color:grey;}
+p.margins {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.party-women {position: fixed; top: 0; height: 50%; width: 100%; background-color:purple;}
+.party-men {position: fixed; bottom: 0; height: 50%; width: 100%; background-image: url("../img/men.jpg"); background-size: cover; background-repeat: no-repeat; background-position: center;}
 
 .directions-hotel {
     postion: absolute;

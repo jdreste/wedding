@@ -1,7 +1,8 @@
-app.controller('MessengerController', function($scope, $http, $interval) {
+app.controller('MessengerController', function($scope, $http, $q, $interval) {
 
     var controller = this;
     var timer;
+    var canceller = $q.defer();
 
     var submitModal = function() {
         modalMessage.show();
@@ -39,6 +40,11 @@ app.controller('MessengerController', function($scope, $http, $interval) {
             timer = undefined;
         }
     }
+               
+    $scope.cancel = function() {
+        canceller.resolve("Submit Cancelled");
+        modalMessage.hide();
+    }
 
     $scope.submit = function() {
 
@@ -55,13 +61,14 @@ app.controller('MessengerController', function($scope, $http, $interval) {
             method: "POST",
             data: JSON.stringify(data),
             contentType: "application/json",
+            timeout: canceller.promise,
             url: "http://www.evolutiondigitalstl.com/svc/weddingImages.php/addMessage"
         }).then(function successCallback(response) {
             modalMessage.hide();
             alert('Message Submitted!');
         }, function errorCallback(response) {
             modalMessage.hide();
-            alert('Message Submitted!');
+            alert('Error!');
         });
         $scope.message = null;
     }

@@ -1,7 +1,10 @@
-app.controller('WomanListController', function($scope, $http) {
+app.controller('WomanListController', function($scope, $http, shareDataFactory) {
 
-            $http.get('data/women.json').success(function(data){
-	          		$scope.women = data; 
-          	});  
-
+    $http.get('data/women.json').success(function(data){
+        $scope.women = data;
+    });
+               
+    $scope.setWoman = function(woman) {
+        shareDataFactory.set(woman);
+    }
 });

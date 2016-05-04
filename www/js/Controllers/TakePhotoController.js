@@ -2,6 +2,7 @@ app.controller('TakePhotoController', function($scope, $http, $interval) {
 
     var controller = this;
     var timer;
+    var ft, win, fail;
 
     $scope.isDisabled = true;
     $scope.showSpinner = false;
@@ -70,9 +71,15 @@ app.controller('TakePhotoController', function($scope, $http, $interval) {
     function clearCache() {
         navigator.camera.cleanup();
     }
+               
+    $scope.cancel = function() {
+        ft.abort(win, fail);
+        modalPhoto.hide();
+    }
 
     $scope.submit = function() {
 
+    modalPhoto.show();
     var fileURI = controller.image;
     var params = {
         user: localStorage.getItem("userName"),
@@ -80,14 +87,14 @@ app.controller('TakePhotoController', function($scope, $http, $interval) {
         time: getTime()
     };
 
-    var win = function (r) {
+    win = function (r) {
             clearCache();
             retries = 0;
             modalPhoto.hide();
             alert('Photo submitted!');
         }
 
-    var fail = function (error) {
+    fail = function (error) {
         if (retries == 0) {
             retries ++
             setTimeout(function() {
@@ -108,7 +115,7 @@ app.controller('TakePhotoController', function($scope, $http, $interval) {
         options.fileKey = "file";
         options.fileName = fileURI.substr(fileURI.lastIndexOf('/') + 1);
         options.mimeType = "image/jpeg";
-        var ft = new FileTransfer();
+        ft = new FileTransfer();
         ft.upload(fileURI, encodeURI("http://www.evolutiondigitalstl.com/svc/weddingImages.php/addImage"), win, fail, options);
         $scope.stop();
         $scope.start();
