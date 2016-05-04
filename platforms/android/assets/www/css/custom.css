@@ -1,0 +1,53 @@
+.page--full_bg__background {
+   background-image:url('../img/background.jpg');
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: 100%;
+   background-color: #efefef;
+}
+
+ons-toolbar {
+    padding-bottom: 145px;
+}
+
+.main-buttons {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+.center {
+    text-align: center;
+}
+
+p.margins {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.party-women {position: fixed; top: 0; height: 50%; width: 100%; background-color:purple;}
+.party-men {position: fixed; bottom: 0; height: 50%; width: 100%; background-image: url("../img/men.jpg"); background-size: cover; background-repeat: no-repeat; background-position: center;}
+
+.directions-hotel {
+    postion: absolute;
+    top: 0;
+    height: 25%;
+    width: 100%;
+    background-color:purple;
+}
+
+.directions-reception {
+    postion: absolute;
+    top: 0;
+    height: 25%;
+    width: 100%;
+    background-color:green;
+}
+
+.directions-wedding {
+    postion: absolute;
+    top: 0;
+    height: 25%;
+    width: 100%;
+    background-color:grey;
+}
