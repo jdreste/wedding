@@ -25,6 +25,7 @@
 		C07DC912B91646C49629D31E /* CDVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = EB10121EC431460D82625EB6 /* CDVLocation.m */; };
 		DFAB19DDDE974C55A63734C6 /* LaunchNavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = B43AEEB6963249CEAB028305 /* LaunchNavigator.m */; };
 		E490B0F8B7C542B086CE6051 /* CDVCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D49EE797CFD4CCA826AA138 /* CDVCamera.m */; };
+		BB1AB7F8059A41FCB202D6BE /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 09495C2DF9184FF793566565 /* CDVInAppBrowser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,8 @@
 		EFAD65F573F54FC8A91158FA /* UIImage+CropScaleOrientation.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "UIImage+CropScaleOrientation.h"; path = "cordova-plugin-camera/UIImage+CropScaleOrientation.h"; sourceTree = "<group>"; };
 		F4F44A9220F141B79EFB10C6 /* CDVFile.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVFile.h; path = "cordova-plugin-file/CDVFile.h"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = WeddingApp/config.xml; sourceTree = "<group>"; };
+		09495C2DF9184FF793566565 /* CDVInAppBrowser.m */ = {isa = PBXFileReference; name = "CDVInAppBrowser.m"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		241AE36B289A41D68F608324 /* CDVInAppBrowser.h */ = {isa = PBXFileReference; name = "CDVInAppBrowser.h"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +219,8 @@
 				1D95A1B7AA4D4713BF5F424E /* CDVLocation.h */,
 				5282E6DC204B4072975A053D /* CDVFileTransfer.m */,
 				465219DEF3294E3ABD099378 /* CDVFileTransfer.h */,
+				09495C2DF9184FF793566565 /* CDVInAppBrowser.m */,
+				241AE36B289A41D68F608324 /* CDVInAppBrowser.h */,
 			);
 			name = Plugins;
 			path = WeddingApp/Plugins;
@@ -339,6 +344,7 @@
 				B752488049C84450A3B05B84 /* CDVAssetLibraryFilesystem.m in Sources */,
 				C07DC912B91646C49629D31E /* CDVLocation.m in Sources */,
 				24BA24EFFC4146EF8D3F8960 /* CDVFileTransfer.m in Sources */,
+				BB1AB7F8059A41FCB202D6BE /* CDVInAppBrowser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

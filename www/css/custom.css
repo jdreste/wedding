@@ -6,8 +6,28 @@
    background-color: #efefef;
 }
 
-ons-toolbar {
-    padding-bottom: 145px;
+@font-face {
+    font-family: "customfont";
+    src: url("../fonts/AlisandraDemo.ttf") format("opentype");
+}
+
+.image {
+    position: relative;
+    width: 100%
+}
+
+img {
+    width: 100%;
+}
+
+h2 {
+    color: #ffffff;
+    font-family: "customfont";
+    font-size:45px;
+    text-shadow: -1px 0 #551a8b, 0 1px #551a8b, 1px 0 #551a8b, 0 -1px #551a8b;
+    position: absolute;
+    width: 100%;
+    top: 5%;
 }
 
 .main-buttons {
@@ -25,29 +45,90 @@ p.margins {
     margin-right: 20px;
 }
 
-.party-women {position: fixed; top: 0; height: 50%; width: 100%; background-color:purple;}
-.party-men {position: fixed; bottom: 0; height: 50%; width: 100%; background-image: url("../img/men.jpg"); background-size: cover; background-repeat: no-repeat; background-position: center;}
+#container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+#top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 50%;
+    text-align: center;
+}
+
+#bottom {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+}
+
+.target {
+    top: 0;
+    height: 33%;
+    width: 100%;
+    background-image: url("../img/target.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.bedbathbeyond {
+    height: 33%;
+    width: 100%;
+    background-image: url("../img/bedbathbeyond.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.macys {
+    position: absolute;
+    bottom: 0;
+    height: 33%;
+    width: 100%;
+    background-image: url("../img/macys.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 
 .directions-hotel {
-    postion: absolute;
     top: 0;
-    height: 25%;
+    height: 33%;
     width: 100%;
-    background-color:purple;
+    background-image: url("../img/hotel.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .directions-reception {
-    postion: absolute;
-    top: 0;
-    height: 25%;
+    position: absolute;
+    height: 33%;
     width: 100%;
-    background-color:green;
+    background-image: url("../img/tapawingo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .directions-wedding {
-    postion: absolute;
-    top: 0;
-    height: 25%;
+    position: absolute;
+    bottom: 0;
+    height: 33%;
     width: 100%;
-    background-color:grey;
+    background-image: url("../img/wedding.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }

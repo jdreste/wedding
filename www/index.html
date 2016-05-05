@@ -52,6 +52,7 @@
         <script type="text/javascript" src="js/Controllers/DirectionsController.js"></script>
         <script type="text/javascript" src="js/Controllers/MessengerController.js"></script>
         <script type="text/javascript" src="js/Controllers/PersonController.js"></script>
+        <script type="text/javascript" src="js/Controllers/RegistryController.js"></script>
 
     </head>
     <body>
@@ -88,7 +89,7 @@
 
             
 			<div class="main-buttons">
-	                <ons-button modifier="large" ng-click="app.navi.pushPage('ceremonyProgram.html');">Ceremony Program</ons-button>
+	               <!-- <ons-button modifier="large" ng-click="app.navi.pushPage('ceremonyProgram.html');">Ceremony Program</ons-button> -->
 	                <ons-button modifier="large" ng-click="app.navi.pushPage('weddingParty.html');">Wedding Party</ons-button>
 	                <ons-button modifier="large" ng-click="app.navi.pushPage('registry.html');">Registry</ons-button>
 	                <ons-button modifier="large" ng-click="app.navi.pushPage('hotel.html');">Hotel</ons-button>
@@ -99,7 +100,7 @@
         </ons-page>
     </ons-navigator>
 
-    <ons-template id="ceremonyProgram.html">
+   <!-- <ons-template id="ceremonyProgram.html">
         <ons-page>
             <ons-toolbar fixed-style>
                 <div class="left">
@@ -109,7 +110,7 @@
             </ons-toolbar>
 
         </ons-page>
-    </ons-template>
+    </ons-template> -->
 
     <ons-template id="weddingParty.html">
         <ons-page>
@@ -117,14 +118,23 @@
                 <div class="left">
                     <ons-button modifier="dark" ng-click="app.navi.popPage('weddingParty.html');">Back</ons-button>
                 </div>
-                <div class="center">Wedding Party</div>
+                <div class="center">Select One</div>
             </ons-toolbar>
 			
-			<div class="party-women center" ng-click="app.navi.pushPage('listPartyWomen.html');">
-                <label>Women</label>
-            </div>
-            <div class="party-men center" ng-click="app.navi.pushPage('listPartyMen.html');">
-                <label>Men</label>
+            <div id="container">
+                <div id="top" ng-click="app.navi.pushPage('listPartyWomen.html');">
+                    <div class="image">
+                        <img src="img/women.jpg" alt="women"/>
+                        <h2>Women</h2>
+                    </div>
+                </div>
+                <div id="bottom" ng-click="app.navi.pushPage('listPartyMen.html');">
+                    <div class="image">
+                        
+                        <img src="img/men.jpg" alt="men"/>
+                        <h2>Men</h2>
+                    </div>
+                </div>
             </div>
             
         </ons-page>
@@ -188,13 +198,28 @@
     </ons-template>
 
     <ons-template id="registry.html">
-        <ons-page>
+        <ons-page ng-controller="RegistryController">
             <ons-toolbar fixed-style>
                 <div class="left">
                     <ons-button modifier="dark" ng-click="app.navi.popPage('registry.html');">Back</ons-button>
                 </div>
                 <div class="center">Registry</div>
             </ons-toolbar>
+            
+            <div class="target center" ng-click="goRegistry('target')">
+                
+            </div>
+            <div class="bedbathbeyond center" ng-click="goRegistry('bedbathbeyond')">
+                
+            </div>
+            <div class="macys center" ng-click="goRegistry('macys')">
+                
+            </div>
+
+            
+       <!--     <ons-button modifier="light" ng-click="goRegistry('target')" class="large-cta">Target</ons-button>
+            <ons-button modifier="light" ng-click="goRegistry('bedbathbeyond')" class="large-cta">Bed Bath and Beyond</ons-button>
+            <ons-button modifier="light" ng-click="goRegistry('macys')" class="large-cta">Macy's'</ons-button> -->
 
 
         </ons-page>
@@ -313,18 +338,17 @@
                 <div class="left">
                     <ons-button modifier="dark" ng-click="app.navi.popPage('directions.html');">Back</ons-button>
                 </div>
-                <div class="center">Directions</div>
+                <div class="center">Select One</div>
             </ons-toolbar>
 
-
-            <div class="directions-hotel" ng-click="launchNavigator(0)">
-                <label>Hotel</label>
+            <div class="directions-hotel center" ng-click="launchNavigator(0)">
+                <h2 class="text-label">Hotel</h2>
             </div>
-            <div class="directions-reception" ng-click="launchNavigator(1)">
-                <label>Reception</label>
+            <div class="directions-reception center" ng-click="launchNavigator(1)">
+                <h2 class="text-label">Reception</h2>
             </div>
-            <div class="directions-wedding" ng-click="launchNavigator(2)">
-                <label>Wedding</label>
+            <div class="directions-wedding center" ng-click="launchNavigator(2)">
+                <h2 class="text-label">Wedding</h2>
             </div>
 
         </ons-page>

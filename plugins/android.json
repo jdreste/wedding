@@ -73,6 +73,9 @@
         },
         "uk.co.workingedge.phonegap.plugin.launchnavigator": {
             "PACKAGE_NAME": "com.evolution.weddingapp"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.evolution.weddingapp"
         }
     },
     "dependent_plugins": {
