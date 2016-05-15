@@ -34,12 +34,16 @@
     <feature name="InAppBrowser">
         <param name="ios-package" value="CDVInAppBrowser" />
     </feature>
+    <feature name="SplashScreen">
+        <param name="ios-package" value="CDVSplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
     <name>WeddingApp</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        A wedding app that is fully customizable for your wedding.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="parkingbeagle@gmail.com" href="http://www.evolutiondigitaldesignstl.com">
+        Evolution Digital Design
     </author>
     <content src="index.html" />
     <access origin="*" />
@@ -51,6 +55,13 @@
     <allow-intent href="geo:*" />
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
+    <splash height="480" src="www/img/macys.png" width="320" />
+    <splash height="960" src="res/screen/ios/Default@2x~iphone.png" width="640" />
+    <splash height="1024" src="www/img/macys.png" width="768" />
+    <splash height="2048" src="www/img/macys.png" width="1536" />
+    <splash height="1136" src="res/screen/ios/Default-568h@2x~iphone.png" width="640" />
+    <splash height="1334" src="res/screen/ios/Default-667h.png" width="750" />
+    <splash height="2208" src="res/screen/ios/Default-736h.png" width="1242" />
     <preference name="AllowInlineMediaPlayback" value="false" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="DisallowOverscroll" value="false" />

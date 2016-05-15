@@ -121,12 +121,20 @@
                 <div class="center">Select One</div>
             </ons-toolbar>
 			
-            <div class="party-women center" ng-click="app.navi.pushPage('listPartyWomen.html');">
-                <h2 class="text-label">Women</h2>
-            </div>
-            
-            <div class="party-men center" ng-click="app.navi.pushPage('listPartyMen.html');">
-                <h2 class="text-label">Men</h2>
+            <div id="container">
+                <div id="top" ng-click="app.navi.pushPage('listPartyWomen.html');">
+                    <div class="image">
+                        <img src="img/women.jpg" alt="women"/>
+                        <h2>Women</h2>
+                    </div>
+                </div>
+                <div id="bottom" ng-click="app.navi.pushPage('listPartyMen.html');">
+                    <div class="image">
+                        
+                        <img src="img/men.jpg" alt="men"/>
+                        <h2>Men</h2>
+                    </div>
+                </div>
             </div>
             
         </ons-page>
@@ -244,6 +252,7 @@
                     <input type="text" name="message" ng-model="message" ng-maxlength="150" ng-required="true" />
                     <ons-button modifier="light" ng-disabled="msgForm.$invalid" ng-click="submit()">Submit</ons-button>
                 </label>
+                <ons-button modifier="cta-large" ng-click="reload()">Load Messages</ons-button>
             </form>
 
             <div ng-show="showSpinner" class='center'>
@@ -295,6 +304,8 @@
             <p class="center">
                 <ons-button modifier="light" ng-disabled="isDisabled" ng-click="submit()">Submit</ons-button>
             </p>
+            
+            <ons-button modifier="cta-large" ng-click="reload()">Load Photos</ons-button>
 
             <div ng-show="showSpinner" class='center'>
                 <ons-icon icon='fa-spinner' spin='true'></ons-icon>

@@ -35,6 +35,10 @@
                         {
                             "xml": "<feature name=\"InAppBrowser\"><param name=\"ios-package\" value=\"CDVInAppBrowser\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SplashScreen\"><param name=\"ios-package\" value=\"CDVSplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -80,6 +84,9 @@
             "PACKAGE_NAME": "com.evolution.weddingapp"
         },
         "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.evolution.weddingapp"
+        },
+        "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.evolution.weddingapp"
         }
     },
@@ -354,6 +361,14 @@
                 "cordova.InAppBrowser.open",
                 "window.open"
             ]
+        },
+        {
+            "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+            "id": "cordova-plugin-splashscreen.SplashScreen",
+            "pluginId": "cordova-plugin-splashscreen",
+            "clobbers": [
+                "navigator.splashscreen"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -364,6 +379,7 @@
         "cordova-plugin-file": "4.2.0",
         "cordova-plugin-geolocation": "2.2.0",
         "cordova-plugin-file-transfer": "1.5.1",
-        "cordova-plugin-inappbrowser": "1.4.0"
+        "cordova-plugin-inappbrowser": "1.4.0",
+        "cordova-plugin-splashscreen": "3.2.2"
     }
 }

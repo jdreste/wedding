@@ -11,13 +11,39 @@
     src: url("../fonts/AlisandraDemo.ttf") format("opentype");
 }
 
+img.picture {
+    width: 100%;
+    height: 100%;
+}
+
 .image {
     position: relative;
-    width: 100%
+    width: 100%;
 }
 
 img {
     width: 100%;
+}
+
+div.hotel-pool {
+    background-image:url('../img/hotel-pool.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+
+div.lobby {
+    background-image:url('../img/lobby.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+
+div.room {
+    background-image:url('../img/room.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
 }
 
 h2 {

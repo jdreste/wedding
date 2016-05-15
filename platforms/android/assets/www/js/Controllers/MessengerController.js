@@ -1,28 +1,38 @@
-app.controller('MessengerController', function($scope, $http, $q, $interval) {
+app.controller('MessengerController', function($scope, $http) {
 
     var controller = this;
-    var timer;
-    var canceller = $q.defer();
+    //var timer;
+    //var canceller = $q.defer();
 
     var submitModal = function() {
         modalMessage.show();
     };
                
     angular.element(document).ready(function () {
-        $scope.start();
+        $scope.reload();
     });
-
-    $scope.showSpinner = false;
-
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    function onDeviceReady(){
-        document.addEventListener("backbutton", function(e){
-            $scope.stop();
-        }, false);
+               
+    $scope.reload = function() {
+        $scope.showSpinner = true;
+        $http.get('http://www.evolutiondigitalstl.com/svc/weddingImages.php/getMessages').success(function(data) {
+            controller.count = data.length;
+            controller.data = data;
+            $scope.showSpinner = false;
+        }).error(function() {
+        });
     }
 
-    $scope.start = function() {
+   // $scope.showSpinner = false;
+
+   // document.addEventListener("deviceready", onDeviceReady, false);
+
+   // function onDeviceReady(){
+    //    document.addEventListener("backbutton", function(e){
+           // $scope.stop();
+    //    }, false);
+    //}
+
+   /* $scope.start = function() {
         timer = $interval(function() {
             $scope.showSpinner = true;
             $http.get('http://www.evolutiondigitalstl.com/svc/weddingImages.php/getMessages').success(function(data) {
@@ -39,7 +49,7 @@ app.controller('MessengerController', function($scope, $http, $q, $interval) {
             $interval.cancel(timer);
             timer = undefined;
         }
-    }
+    } */
                
     $scope.cancel = function() {
         canceller.resolve("Submit Cancelled");

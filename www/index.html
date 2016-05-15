@@ -53,6 +53,7 @@
         <script type="text/javascript" src="js/Controllers/MessengerController.js"></script>
         <script type="text/javascript" src="js/Controllers/PersonController.js"></script>
         <script type="text/javascript" src="js/Controllers/RegistryController.js"></script>
+        <script type="text/javascript" src="js/Controllers/HotelController.js"></script>
 
     </head>
     <body>
@@ -216,12 +217,6 @@
                 
             </div>
 
-            
-       <!--     <ons-button modifier="light" ng-click="goRegistry('target')" class="large-cta">Target</ons-button>
-            <ons-button modifier="light" ng-click="goRegistry('bedbathbeyond')" class="large-cta">Bed Bath and Beyond</ons-button>
-            <ons-button modifier="light" ng-click="goRegistry('macys')" class="large-cta">Macy's'</ons-button> -->
-
-
         </ons-page>
     </ons-template>
 
@@ -252,6 +247,9 @@
                     <input type="text" name="message" ng-model="message" ng-maxlength="150" ng-required="true" />
                     <ons-button modifier="light" ng-disabled="msgForm.$invalid" ng-click="submit()">Submit</ons-button>
                 </label>
+                <div class="center">
+                    <ons-button modifier="cta-large" ng-click="reload()">Load Messages</ons-button>
+                </div>
             </form>
 
             <div ng-show="showSpinner" class='center'>
@@ -297,12 +295,15 @@
                 <ons-button modifier="light" ng-click="takePicture()">Take Photo</ons-button>
             </p>
 
-            <img ng-src="{{picture}}" ng-show="pictureShown" height="150" width="150"/>
-            <div class="pic-meta"></div>
+            <img ng-src="{{picture}}" class="center" ng-show="pictureShown" height="150" width="150"/>
+           <!-- <div class="pic-meta"></div> -->
 
             <p class="center">
                 <ons-button modifier="light" ng-disabled="isDisabled" ng-click="submit()">Submit</ons-button>
             </p>
+            <div class="center">
+                <ons-button modifier="cta-large" ng-click="reload()">Load Photos</ons-button>
+            </div>
 
             <div ng-show="showSpinner" class='center'>
                 <ons-icon icon='fa-spinner' spin='true'></ons-icon>
@@ -312,7 +313,7 @@
             <div id='gallery'>
                 <ons-list style='position: relative; height: 300px;'>
                     <ons-list-item ons-lazy-repeat="GalleryDelegate">
-                        <img style="width:50px;" ng-src="http://www.evolutiondigitalstl.com/uploads/{{item.filename}}.jpg"/>
+                        <img class="picture" ng-src="http://www.evolutiondigitalstl.com/uploads/{{item.filename}}.jpg"/>
                         <span>{{item.sender}}</span>
                         <span>{{item.date}}</span>
                         <span>{{item.time}}</span>
@@ -331,6 +332,30 @@
 
         </ons-page>
     </ons-template>
+    
+    <ons-template id="hotel.html">
+        <ons-page ng-controller="HotelController">
+            <ons-toolbar fixed-style>
+                <div class="left">
+                    <ons-button modifier="dark" ng-click="app.navi.popPage('hotel.html');">Back</ons-button>
+                </div>
+                <div class="center">Holiday Inn St. Louis Sw - Route 66</div>
+            </ons-toolbar>
+            
+            <p class="center">
+                Straightforward rooms come with flat-screen TVs and desks, plus pull-out sofas and kitchenettes. Kids 19 and under stay free with an adult and there's free WiFi in every room, as well as a choice of hard and soft pillows. The facility also offers a breakfast cafe and a casual American bar/grill (where kids 12 and under eat free), plus live entertainment and indoor/outdoor pools. There's also a business center with meeting space, a car-rental service and free parking.
+            </p>
+            
+            <div class="center"><strong>Address:  </strong>10709 Watson Rd., St. Louis, MO 63127</div>
+            <div class="center"><strong>Phone:  </strong>(314) 821-6600</div>
+            
+            <div class="room center" />
+            <div class="lobby center" />
+            <div class="hotel-pool center" />
+            
+        </ons-page>
+    </ons-template>
+
 
     <ons-template id="directions.html">
         <ons-page ng-controller="DirectionsController">

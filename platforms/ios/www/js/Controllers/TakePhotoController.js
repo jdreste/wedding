@@ -1,48 +1,46 @@
-app.controller('TakePhotoController', function($scope, $http, $interval) {
+app.controller('TakePhotoController', function($scope, $http) {
 
     var controller = this;
-    var timer;
+    //var timer;
     var ft, win, fail;
 
     $scope.isDisabled = true;
     $scope.showSpinner = false;
     $scope.pictureShown = false;
 
-    document.addEventListener("deviceready", onDeviceReady, false);
+    /*document.addEventListener("deviceready", onDeviceReady, false);
 
     function onDeviceReady(){
         document.addEventListener("backbutton", function(e){
             $scope.stop();
         }, false);
-    }
+    }*/
 
     angular.element(document).ready(function () {
-        $scope.start();
+        $scope.reload();
     });
 
     var submitModal = function() {
         modalPhoto.show();
     };
 
-    $scope.start = function() {
-        timer = $interval(function() {
-                $scope.showSpinner = true;
-            $http.get('http://www.evolutiondigitalstl.com/svc/weddingImages.php/getImages').success(function(data) {
-                controller.count = data.length;
-                controller.data = data;
-                $scope.showSpinner = false;
-            }).error(function() {
-                alert('error');
-            });
-        }, 5000);
+    $scope.reload = function() {
+        $scope.showSpinner = true;
+        $http.get('http://www.evolutiondigitalstl.com/svc/weddingImages.php/getImages').success(function(data) {
+            controller.count = data.length;
+            controller.data = data;
+            $scope.showSpinner = false;
+        }).error(function() {
+            alert('error');
+        });
     }
 
-    $scope.stop = function() {
+/*    $scope.stop = function() {
         if (angular.isDefined(timer)) {
             $interval.cancel(timer);
             timer = undefined;
         }
-    }
+    } */
 
     $scope.takePicture = function(){
         navigator.camera.getPicture(onSuccess, onFail, {
