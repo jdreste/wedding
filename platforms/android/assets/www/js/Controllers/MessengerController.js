@@ -1,8 +1,8 @@
-app.controller('MessengerController', function($scope, $http) {
+app.controller('MessengerController', function($scope, $http, $q) {
 
     var controller = this;
     //var timer;
-    //var canceller = $q.defer();
+    var canceller = $q.defer();
 
     var submitModal = function() {
         modalMessage.show();
@@ -75,7 +75,7 @@ app.controller('MessengerController', function($scope, $http) {
             url: "http://www.evolutiondigitalstl.com/svc/weddingImages.php/addMessage"
         }).then(function successCallback(response) {
             modalMessage.hide();
-            alert('Message Submitted!');
+            $scope.reload();
         }, function errorCallback(response) {
             modalMessage.hide();
             alert('Error!');

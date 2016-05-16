@@ -53,6 +53,7 @@
         <script type="text/javascript" src="js/Controllers/MessengerController.js"></script>
         <script type="text/javascript" src="js/Controllers/PersonController.js"></script>
         <script type="text/javascript" src="js/Controllers/RegistryController.js"></script>
+        <script type="text/javascript" src="js/Controllers/HotelController.js"></script>
 
     </head>
     <body>
@@ -90,12 +91,12 @@
             
 			<div class="main-buttons">
 	               <!-- <ons-button modifier="large" ng-click="app.navi.pushPage('ceremonyProgram.html');">Ceremony Program</ons-button> -->
-	                <ons-button modifier="large" ng-click="app.navi.pushPage('weddingParty.html');">Wedding Party</ons-button>
-	                <ons-button modifier="large" ng-click="app.navi.pushPage('registry.html');">Registry</ons-button>
-	                <ons-button modifier="large" ng-click="app.navi.pushPage('hotel.html');">Hotel</ons-button>
-	                <ons-button modifier="large" ng-click="app.navi.pushPage('messenger.html');">Messenger</ons-button>
-	                <ons-button modifier="large" ng-click="app.navi.pushPage('photoBooth.html');">Photo Booth</ons-button>
-                    <ons-button modifier="large" ng-click="app.navi.pushPage('directions.html');">Directions</ons-button>
+	                <ons-button ng-click="app.navi.pushPage('weddingParty.html');">Wedding Party</ons-button>
+	                <ons-button ng-click="app.navi.pushPage('registry.html');">Registry</ons-button>
+	                <ons-button ng-click="app.navi.pushPage('hotel.html');">Hotel</ons-button>
+	                <ons-button ng-click="app.navi.pushPage('messenger.html');">Messenger</ons-button>
+	                <ons-button ng-click="app.navi.pushPage('photoBooth.html');">Photo Booth</ons-button>
+                    <ons-button ng-click="app.navi.pushPage('directions.html');">Directions</ons-button>
 	        </div>
         </ons-page>
     </ons-navigator>
@@ -116,23 +117,23 @@
         <ons-page>
             <ons-toolbar fixed-style>
                 <div class="left">
-                    <ons-button modifier="dark" ng-click="app.navi.popPage('weddingParty.html');">Back</ons-button>
+                    <ons-button ng-click="app.navi.popPage('weddingParty.html');">Back</ons-button>
                 </div>
-                <div class="center">Select One</div>
+                <div class="center">The Wedding Party</div>
             </ons-toolbar>
 			
-            <div id="container">
+            <div id="container" class="wedding-party-cont">
                 <div id="top" ng-click="app.navi.pushPage('listPartyWomen.html');">
                     <div class="image">
                         <img src="img/women.jpg" alt="women"/>
-                        <h2>Women</h2>
+                        <div class="label custom-font dark-font">Women ></div>
                     </div>
                 </div>
                 <div id="bottom" ng-click="app.navi.pushPage('listPartyMen.html');">
                     <div class="image">
                         
                         <img src="img/men.jpg" alt="men"/>
-                        <h2>Men</h2>
+                        <div class="label custom-font dark-font">Men ></div>
                     </div>
                 </div>
             </div>
@@ -216,12 +217,6 @@
                 
             </div>
 
-            
-       <!--     <ons-button modifier="light" ng-click="goRegistry('target')" class="large-cta">Target</ons-button>
-            <ons-button modifier="light" ng-click="goRegistry('bedbathbeyond')" class="large-cta">Bed Bath and Beyond</ons-button>
-            <ons-button modifier="light" ng-click="goRegistry('macys')" class="large-cta">Macy's'</ons-button> -->
-
-
         </ons-page>
     </ons-template>
 
@@ -246,41 +241,56 @@
                 </div>
                 <div class="center">Messenger</div>
             </ons-toolbar>
-            <form name="msgForm">
-                <label>
-                    Enter Message:
-                    <input type="text" name="message" ng-model="message" ng-maxlength="150" ng-required="true" />
-                    <ons-button modifier="light" ng-disabled="msgForm.$invalid" ng-click="submit()">Submit</ons-button>
-                </label>
-                <ons-button modifier="cta-large" ng-click="reload()">Load Messages</ons-button>
-            </form>
+            <div class="page-container">
+                <form name="msgForm">
+                    <div class="message-form">
+                        <label>Enter Message:</label>
+                        <div><textarea rows="4" name="message" ng-model="message" ng-maxlength="150" ng-required="true"></textarea></div>
+                        <ons-button modifier="light" ng-disabled="msgForm.$invalid" ng-click="submit()">Submit</ons-button>
+                    </div>
+                    <!--Commenting out. Changed to textarea
+                    <label>
+                        Enter Message:
+                        <input type="text" name="message" ng-model="message" ng-maxlength="150" ng-required="true" />
+                        <ons-button ng-disabled="msgForm.$invalid" ng-click="submit()">Submit</ons-button>
+                    </label>
+                    -->
+                    <div class="messages-cont">
+                        <div class="message-label">
+                            <label>Messages:</label>
+                        </div>
+                        <div class="message-refresh">
+                            <ons-button modifier="cta-large" ng-click="reload()">Refresh Messages</ons-button>
+                        </div>
+                    </div>
+                </form>
 
-            <div ng-show="showSpinner" class='center'>
-                <ons-icon icon='fa-spinner' spin='true'></ons-icon>
-                <label>Loading more messages...</label>
-            </div>
-
-
-            <div id='messageList'>
-                <ons-list style='position: relative; height: 300px;'>
-                    <ons-list-item ons-lazy-repeat="MessageDelegate">
-                        <span>{{item.message}}</span>
-                        <span>{{item.user}}</span>
-                        <span>{{item.date}}</span>
-                        <span>{{item.time}}</span>
-                    </ons-list-item>
-                </ons-list>
-            </div>
-
-            <ons-modal var="modalMessage">
-                <ons-icon icon="fa-spinner" spin='true'></ons-icon>
-                <div class="modal-header">Please Wait</div>
-                <div class="modal-body">Submitting</div>
-                <div class="modal-footer">
-                    <ons-button modifier="cta" ng-click="cancel()">Cancel</ons-button>
+                <div ng-show="showSpinner" class='center' style="clear:both; width: 100%;">
+                    <ons-icon icon='fa-spinner' spin='true'></ons-icon>
+                    <label>Loading messages...</label>
                 </div>
-            </ons-modal>
 
+
+                <div id='messageList'>
+                    <ons-list style='position: relative; height: 300px;'>
+                        <ons-list-item ons-lazy-repeat="MessageDelegate">
+                            <span>{{item.message}}</span>
+                            <span>{{item.user}}</span>
+                            <span>{{item.date}}</span>
+                            <span>{{item.time}}</span>
+                        </ons-list-item>
+                    </ons-list>
+                </div>
+
+                <ons-modal var="modalMessage">
+                    <ons-icon icon="fa-spinner" spin='true'></ons-icon>
+                    <div class="modal-header">Please Wait</div>
+                    <div class="modal-body">Submitting</div>
+                    <div class="modal-footer">
+                        <ons-button modifier="cta" ng-click="cancel()">Cancel</ons-button>
+                    </div>
+                </ons-modal>
+            </div>
         </ons-page>
     </ons-template>
 
@@ -292,48 +302,75 @@
                 </div>
                 <div class="center">Photo Booth</div>
             </ons-toolbar>
-
-
-            <p class="center">
-                <ons-button modifier="light" ng-click="takePicture()">Take Photo</ons-button>
-            </p>
-
-            <img ng-src="{{picture}}" ng-show="pictureShown" height="150" width="150"/>
-            <div class="pic-meta"></div>
-
-            <p class="center">
-                <ons-button modifier="light" ng-disabled="isDisabled" ng-click="submit()">Submit</ons-button>
-            </p>
-            
-            <ons-button modifier="cta-large" ng-click="reload()">Load Photos</ons-button>
-
-            <div ng-show="showSpinner" class='center'>
-                <ons-icon icon='fa-spinner' spin='true'></ons-icon>
-                <label>Loading more photos...</label>
-            </div>
-
-            <div id='gallery'>
-                <ons-list style='position: relative; height: 300px;'>
-                    <ons-list-item ons-lazy-repeat="GalleryDelegate">
-                        <img style="width:50px;" ng-src="http://www.evolutiondigitalstl.com/uploads/{{item.filename}}.jpg"/>
-                        <span>{{item.sender}}</span>
-                        <span>{{item.date}}</span>
-                        <span>{{item.time}}</span>
-                    </ons-list-item>
-                </ons-list>
-            </div>
-
-            <ons-modal var="modalPhoto">
-                <ons-icon icon="fa-spinner" spin='true'></ons-icon>
-                <div class="modal-header">Please Wait</div>
-                <div class="modal-body">Submitting</div>
-                <div class="modal-footer">
-                    <ons-button modifier="cta" ng-click="cancel()">Cancel</ons-button>
+            <div class="page-container">
+                <div class="takephoto-button">
+                    <ons-button modifier="light" ng-click="takePicture()"><div><img src="img/takephoto.png"/></div>Take A Photo</ons-button>
                 </div>
-            </ons-modal>
 
+                <img ng-src="{{picture}}" class="center" ng-show="pictureShown" height="150" width="150"/>
+               <!-- <div class="pic-meta"></div> -->
+
+                <p class="center">
+                    <ons-button modifier="light" ng-disabled="isDisabled" ng-click="submit()">Submit</ons-button>
+                </p>
+                <div class="center">
+                    <ons-button modifier="cta-large" ng-click="reload()">Refresh Pics</ons-button>
+                </div>
+
+                <div ng-show="showSpinner" class='center'>
+                    <ons-icon icon='fa-spinner' spin='true'></ons-icon>
+                    <label>Loading...</label>
+                </div>
+
+                <div id='gallery'>
+                    <ons-list style='position: relative; height: 300px;'>
+                        <ons-list-item ons-lazy-repeat="GalleryDelegate">
+                        <div>
+                            <img class="picture" ng-src="http://www.evolutiondigitalstl.com/uploads/{{item.filename}}.jpg"/>
+                            <span>{{item.sender}}</span>
+                            <span>{{item.date}}</span>
+                            <span>{{item.time}}</span>
+                        </div>
+                        </ons-list-item>
+                    </ons-list>
+                </div>
+
+                <ons-modal var="modalPhoto">
+                    <ons-icon icon="fa-spinner" spin='true'></ons-icon>
+                    <div class="modal-header">Please Wait</div>
+                    <div class="modal-body">Submitting</div>
+                    <div class="modal-footer">
+                        <ons-button modifier="cta" ng-click="cancel()">Cancel</ons-button>
+                    </div>
+                </ons-modal>
+            </div>
         </ons-page>
     </ons-template>
+    
+    <ons-template id="hotel.html">
+        <ons-page ng-controller="HotelController">
+            <ons-toolbar fixed-style>
+                <div class="left">
+                    <ons-button modifier="dark" ng-click="app.navi.popPage('hotel.html');">Back</ons-button>
+                </div>
+                <div class="center">Hotel Information</div>
+            </ons-toolbar>
+            <div class="page-container">
+                <div class="hotel-info">
+                    <div><strong>Hotel:  </strong>Holiday Inn St. Louis Sw - Route 66</div>
+                    <div><strong>Address:  </strong>10709 Watson Rd., St. Louis, MO 63127</div>
+                    <div><strong>Phone:  </strong><a ng-href="tel:314-821-6600">314-821-6600</a></div>
+                    <div><strong>Amenities: </strong> Straightforward rooms come with flat-screen TVs and desks, plus pull-out sofas and kitchenettes. Kids 19 and under stay free with an adult and there's free WiFi in every room, as well as a choice of hard and soft pillows. The facility also offers a breakfast cafe and a casual American bar/grill (where kids 12 and under eat free), plus live entertainment and indoor/outdoor pools. There's also a business center with meeting space, a car-rental service and free parking.</div>
+                    
+                    <div><strong>Photos:  </strong></div>
+                    <div><img src="img/hotel-pool.jpg"/></div>
+                    <div><img src="img/lobby.jpg"/></div>
+                    <div><img src="img/room.jpg"/></div>
+                </div>
+            </div>          
+        </ons-page>
+    </ons-template>
+
 
     <ons-template id="directions.html">
         <ons-page ng-controller="DirectionsController">
@@ -341,7 +378,7 @@
                 <div class="left">
                     <ons-button modifier="dark" ng-click="app.navi.popPage('directions.html');">Back</ons-button>
                 </div>
-                <div class="center">Select One</div>
+                <div class="center">Directions</div>
             </ons-toolbar>
 
             <div class="directions-hotel center" ng-click="launchNavigator(0)">

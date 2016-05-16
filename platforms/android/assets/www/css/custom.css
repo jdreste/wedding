@@ -11,13 +11,79 @@
     src: url("../fonts/AlisandraDemo.ttf") format("opentype");
 }
 
+img.picture {
+    width: 100%;
+    height: 100%;
+}
+
+.wedding-party-cont img {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
 .image {
     position: relative;
-    width: 100%
+    width: 100%;
 }
 
 img {
     width: 100%;
+}
+
+.page-container {
+    padding: 20px;
+}
+
+.hotel-info div {
+    padding-bottom: 5px;
+}
+
+div.hotel-pool {
+    background-image:url('../img/hotel-pool.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+
+div.lobby {
+    background-image:url('../img/lobby.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+
+div.room {
+    background-image:url('../img/room.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+
+.custom-font {
+    font-family: "customfont";
+}
+
+.dark-font {
+    color: #000;
+}
+
+.wedding-party-cont {
+    text-align: center;
+}
+.wedding-party-cont .label {
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    top: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 40px;
+    padding: 15px 20px 10px 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-width: 2px;
+    border-color: #9A32CD;
+    border-style: solid;
 }
 
 h2 {
@@ -30,10 +96,143 @@ h2 {
     top: 5%;
 }
 
-.main-buttons {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
+ons-button {
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 40px;
+    padding: 15px 20px 10px 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-width: 2px;
+    border-color: #9A32CD;
+    text-align: center;
+}
+
+ons-button .label {
+    font-family: "customfont";
+    color: #000;
+}
+
+.main-buttons ons-button {
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 40px;
+    padding: 15px 20px 10px 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: block;
+    width: 60%;
+    border-width: 2px;
+    border-color: #9A32CD;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.navigation-bar {
+    background-color: #9A32CD;
+}
+
+.navigation-bar .navigation-bar__title {
+    color: #FFF;
+}
+
+.navigation-bar ons-button {
+    border-radius: 10px;
+    background-color: rgba(154, 50, 205, 0.7);
+    border-width: 2px;
+    border-color: #FFF;
+    text-align: center;
+    padding: 0px 5px 0px 5px;
+    margin-left: 5px;
+    margin-top: 2px;
+    width: 50%;
+}
+
+.page-container ons-button {
+    border-radius: 10px;
+    background-color: rgba(154, 50, 205, 0.7);
+    border-width: 2px;
+    border-color: #FFF;
+    text-align: center;
+    padding: 0px 5px 0px 5px;
+    margin-left: 5px;
+    margin-top: 2px;
+    width: 50%;
+}
+
+.navigation-bar ons-button .label {
+    font-family: "customfont";
+    color: #FFF;
+}
+
+.page-container ons-button .label {
+    font-family: "customfont";
+    color: #FFF;
+}
+
+.messages-cont {
+    width: 100%;
+}
+
+.messages-cont .message-label {
+    float: left;
+    width: 50%;
+    padding-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.message-refresh {
+    float: right;
+    width: 50%;
+    text-align: right;
+}
+
+.message-refresh ons-button {
+    width: 75%;
+}
+
+.message-form ons-button {
+    margin-left: 0px;
+}
+#messageList {
+    clear:both;
+    padding-top: 10px;
+}
+
+.message-form textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.takephoto-button {
+    width: 100%;
+    text-align: center;
+}
+
+.takephoto-button img {
+    width: auto;
+    height: 40px;
+    margin-bottom: -15px;
+    padding-top: 5px;
+}
+
+#gallery ons-list {
+    margin-top: 15px;
+}
+
+#gallery ons-list-item {
+    position: relative !important;
+    top: auto;
+    right: auto;
+    left: auto;
+    bottom: auto;
 }
 
 .center {
