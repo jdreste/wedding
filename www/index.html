@@ -307,9 +307,6 @@
                     <ons-button modifier="light" ng-click="takePicture()"><div><img src="img/takephoto.png"/></div>Take A Photo</ons-button>
                 </div>
 
-                <img ng-src="{{picture}}" class="center" ng-show="pictureShown" height="150" width="150"/>
-               <!-- <div class="pic-meta"></div> -->
-
                 <p class="center">
                     <ons-button modifier="light" ng-disabled="isDisabled" ng-click="submit()">Submit</ons-button>
                 </p>
@@ -339,9 +336,6 @@
                     <ons-icon icon="fa-spinner" spin='true'></ons-icon>
                     <div class="modal-header">Please Wait</div>
                     <div class="modal-body">Submitting</div>
-                    <div class="modal-footer">
-                        <ons-button modifier="cta" ng-click="cancel()">Cancel</ons-button>
-                    </div>
                 </ons-modal>
             </div>
         </ons-page>

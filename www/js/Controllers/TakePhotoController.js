@@ -1,25 +1,16 @@
 app.controller('TakePhotoController', function($scope, $http) {
 
     var controller = this;
-    //var timer;
     var ft, win, fail;
 
     $scope.isDisabled = true;
     $scope.showSpinner = false;
-    $scope.pictureShown = false;
-
-    /*document.addEventListener("deviceready", onDeviceReady, false);
-
-    function onDeviceReady(){
-        document.addEventListener("backbutton", function(e){
-            $scope.stop();
-        }, false);
-    }*/
+    $scope.picture = null;
 
     angular.element(document).ready(function () {
         $scope.reload();
     });
-
+               
     var submitModal = function() {
         modalPhoto.show();
     };
@@ -35,31 +26,21 @@ app.controller('TakePhotoController', function($scope, $http) {
         });
     }
 
-/*    $scope.stop = function() {
-        if (angular.isDefined(timer)) {
-            $interval.cancel(timer);
-            timer = undefined;
-        }
-    } */
-
     $scope.takePicture = function(){
         navigator.camera.getPicture(onSuccess, onFail, {
             quality: 10,
-            destinationType: Camera.DestinationType.DATA_URL
-        });
+            destinationType: Camera.DestinationType.DATA_URL,
+            correctOrientation: true
+        }, callback());
     }
-
-    $scope.clearImage = function() {
-        $scope.picture = null;
-        $scope.pictureShown = false;
+               
+    function callback() {
+        $scope.isDisabled = false;
     }
 
     function onSuccess(imageData) {
         controller.image = "data:image/jpeg;base64," + imageData;
-        $scope.pictureShown = true;
         $scope.picture = controller.image;
-        $scope.isDisabled = false;
-        $scope.pictureShown = true;
     }
 
     function onFail(message) {
@@ -68,11 +49,6 @@ app.controller('TakePhotoController', function($scope, $http) {
 
     function clearCache() {
         navigator.camera.cleanup();
-    }
-               
-    $scope.cancel = function() {
-        ft.abort(win, fail);
-        modalPhoto.hide();
     }
 
     $scope.submit = function() {
@@ -105,7 +81,7 @@ app.controller('TakePhotoController', function($scope, $http) {
             alert(error);
         }
     }
-
+               
 
     var options = new FileUploadOptions();
         options.params = params;
@@ -114,11 +90,11 @@ app.controller('TakePhotoController', function($scope, $http) {
         options.fileName = fileURI.substr(fileURI.lastIndexOf('/') + 1);
         options.mimeType = "image/jpeg";
         ft = new FileTransfer();
-        ft.upload(fileURI, encodeURI("http://www.evolutiondigitalstl.com/svc/weddingImages.php/addImage"), win, fail, options);
+        ft.upload(fileURI, encodeURI("http://www.evolutiondigitalstl.com/svc/weddingImages.php/addImage"), win, fail, options, callbackDisableButton());
         $scope.stop();
         $scope.start();
-        $scope.pictureShown = false;
     }
+
 
     $scope.GalleryDelegate = {
         configureItemScope: function(index, itemScope) {
@@ -147,5 +123,9 @@ app.controller('TakePhotoController', function($scope, $http) {
         destroyItemScope: function(index, itemScope) {
             //itemScope.canceler.resolve();
         }
+    }
+               
+    function callbackDisableButton() {
+        $scope.isDisabled = true;
     }
 });
