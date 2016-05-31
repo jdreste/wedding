@@ -149,23 +149,22 @@
                 </div>
                 <div class="center">Men</div>
             </ons-toolbar>
-            
-            <ons-list style="margin: -1px 0">
-                <ons-list-item modifier="chevron" class="item" ng-repeat="man in men" ng-click="app.navi.pushPage('person.html');">
-                    <ons-row ng-click="setMan(man)">
-                        <ons-col width="60px">
-                            <div class="item-thum"></div>
-                        </ons-col>
-                        <ons-col>
-                            <header>
-                                <span class="item-title">{{man.name}}</span>
-                                <span class="item-label"></span>
-                            </header>
-                            <p class="item-desc">{{man.role}}</p>
-                        </ons-col>
-                    </ons-row>
-                </ons-list-item>
-            </ons-list>
+            <div class="page-container">
+                <ons-list style="margin: -1px 0">
+                    <ons-list-item modifier="chevron" class="item" ng-repeat="man in men" ng-click="app.navi.pushPage('person.html');">
+                        <ons-row ng-click="setMan(man)">
+                            <ons-col>
+                                <div class="party-name">
+                                    {{man.name}}
+                                </div>
+                                <div class="party-role">
+                                    {{man.role}}
+                                </div>
+                            </ons-col>
+                        </ons-row>
+                    </ons-list-item>
+                </ons-list>
+            </div>
             
         </ons-page>
     </ons-template>
@@ -178,23 +177,22 @@
                 </div>
                 <div class="center">Women</div>
             </ons-toolbar>
-            
-            <ons-list style="margin: -1px 0">
-                <ons-list-item modifier="chevron" class="item" ng-repeat="woman in women" ng-click="app.navi.pushPage('person.html');">
-                    <ons-row ng-click="setWoman(woman)">
-                        <ons-col width="60px">
-                            <div class="item-thum"></div>
-                        </ons-col>
-                        <ons-col>
-                            <header>
-                                <span class="item-title">{{woman.name}}</span>
-                                <span class="item-label"></span>
-                            </header>
-                            <p class="item-desc">{{woman.role}}</p>
-                        </ons-col>
-                    </ons-row>
-                </ons-list-item>
-            </ons-list>
+            <div class="page-container">
+                <ons-list style="margin: -1px 0">
+                    <ons-list-item modifier="chevron" class="item" ng-repeat="woman in women" ng-click="app.navi.pushPage('person.html');">
+                        <ons-row ng-click="setWoman(woman)">
+                            <ons-col>
+                                <div class="party-name">
+                                    {{woman.name}}
+                                </div>
+                                <div class="party-role">
+                                    {{woman.role}}
+                                </div>
+                            </ons-col>
+                        </ons-row>
+                    </ons-list-item>
+                </ons-list>
+            </div>
         </ons-page>
     </ons-template>
 
@@ -246,6 +244,7 @@
                     <div class="message-form">
                         <label>Enter Message:</label>
                         <div><textarea rows="4" name="message" ng-model="message" ng-maxlength="150" ng-required="true"></textarea></div>
+                        <div style='font-size: 12px;'><label>Limit 150 characters.</label></div>
                         <ons-button modifier="light" ng-disabled="msgForm.$invalid" ng-click="submit()">Submit</ons-button>
                     </div>
                     <!--Commenting out. Changed to textarea
@@ -272,9 +271,9 @@
 
 
                 <div id='messageList'>
-                    <ons-list style='position: relative; height: 300px;'>
-                        <ons-list-item ons-lazy-repeat="MessageDelegate">
-                            <span>{{item.message}}</span>
+                    <ons-list style='position: relative; height: 300px; max-width: 100%; overflow-x: hidden;'>
+                        <ons-list-item style='display: table;' ons-lazy-repeat="MessageDelegate">
+                            <div style='padding: 5px; font-size: 12px;'>{{item.message}}</div>
                             <span>{{item.user}}</span>
                             <span>{{item.date}}</span>
                             <span>{{item.time}}</span>
@@ -286,9 +285,6 @@
                     <ons-icon icon="fa-spinner" spin='true'></ons-icon>
                     <div class="modal-header">Please Wait</div>
                     <div class="modal-body">Submitting</div>
-                    <div class="modal-footer">
-                        <ons-button modifier="cta" ng-click="cancel()">Cancel</ons-button>
-                    </div>
                 </ons-modal>
             </div>
         </ons-page>
@@ -397,9 +393,10 @@
                 <div class="center">{{shareDataFactory.role}}</div>
             </ons-toolbar>
 
-            <h2 class="center">{{shareDataFactory.name}}</h2>
-            <p class="center margins">{{shareDataFactory.background}}</p>
-
+            <div class="page-container person">
+                <div class="person-name">{{shareDataFactory.name}}</div>
+                <div class="person-desc">{{shareDataFactory.background}}</div>
+            </div>
         </ons-page>
     </ons-template>
 

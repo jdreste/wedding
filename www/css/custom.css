@@ -1,8 +1,5 @@
 .page--full_bg__background {
-   background-image:url('../img/background.jpg');
-   background-repeat: no-repeat;
-   background-attachment: fixed;
-   background-size: 100%;
+   background-image:url('../img/heart-bg.jpg');
    background-color: #efefef;
 }
 
@@ -72,8 +69,8 @@ div.room {
 }
 .wedding-party-cont .label {
     position: absolute;
-    left: 25%;
-    right: 25%;
+    left: 20%;
+    right: 20%;
     top: 40%;
     margin-left: auto;
     margin-right: auto;
@@ -84,6 +81,32 @@ div.room {
     border-width: 2px;
     border-color: #9A32CD;
     border-style: solid;
+}
+
+.page-container .party-name {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: normal;
+    padding-top: 10px;
+}
+
+.page-container .party-role {
+    font-size: 14px;
+    font-style: italic;
+    line-height: normal;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.page-container.person .person-name {
+    font-size: 32px;
+    font-family: "customfont";
+    font-weight: bold;
+    text-align: center;
+}
+
+.page-container.person .person-desc {
+    padding-top: 10px;
 }
 
 h2 {
@@ -120,16 +143,19 @@ ons-button .label {
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    font-size: 40px;
-    padding: 15px 20px 10px 20px;
+    font-size: 36px;
+    padding: 15px 10px 10px 10px;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.7);
     display: block;
-    width: 60%;
+    width: 70%;
     border-width: 2px;
     border-color: #9A32CD;
     margin-top: 10px;
     text-align: center;
+    line-height: normal;
+    text-overflow: inherit;
+    white-space: inherit;
 }
 
 .navigation-bar {
@@ -138,6 +164,8 @@ ons-button .label {
 
 .navigation-bar .navigation-bar__title {
     color: #FFF;
+    font-family: "customfont";
+    font-size: 20px;
 }
 
 .navigation-bar ons-button {
@@ -204,6 +232,10 @@ ons-button .label {
     padding-top: 10px;
 }
 
+#messageList ons-list-item {
+    display: table;
+}
+
 .message-form textarea {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -233,6 +265,14 @@ ons-button .label {
     right: auto;
     left: auto;
     bottom: auto;
+}
+
+.wrapping-list .item-content, .wrapping-list .item {
+    max-width: 100%;
+    overflow-x: hidden;
+    text-overflow: initial;
+    white-space: initial;
+    word-wrap:break-word;
 }
 
 .center {

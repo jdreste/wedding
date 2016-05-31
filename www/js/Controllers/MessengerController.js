@@ -1,8 +1,6 @@
-app.controller('MessengerController', function($scope, $http, $q) {
+app.controller('MessengerController', function($scope, $http) {
 
     var controller = this;
-    //var timer;
-    var canceller = $q.defer();
 
     var submitModal = function() {
         modalMessage.show();
@@ -22,40 +20,6 @@ app.controller('MessengerController', function($scope, $http, $q) {
         });
     }
 
-   // $scope.showSpinner = false;
-
-   // document.addEventListener("deviceready", onDeviceReady, false);
-
-   // function onDeviceReady(){
-    //    document.addEventListener("backbutton", function(e){
-           // $scope.stop();
-    //    }, false);
-    //}
-
-   /* $scope.start = function() {
-        timer = $interval(function() {
-            $scope.showSpinner = true;
-            $http.get('http://www.evolutiondigitalstl.com/svc/weddingImages.php/getMessages').success(function(data) {
-                controller.count = data.length;
-                controller.data = data;
-                $scope.showSpinner = false;
-            }).error(function() {
-            });
-        }, 5000);
-    }
-
-    $scope.stop = function() {
-        if (angular.isDefined(timer)) {
-            $interval.cancel(timer);
-            timer = undefined;
-        }
-    } */
-               
-    $scope.cancel = function() {
-        canceller.resolve("Submit Cancelled");
-        modalMessage.hide();
-    }
-
     $scope.submit = function() {
 
         submitModal();
@@ -71,7 +35,6 @@ app.controller('MessengerController', function($scope, $http, $q) {
             method: "POST",
             data: JSON.stringify(data),
             contentType: "application/json",
-            timeout: canceller.promise,
             url: "http://www.evolutiondigitalstl.com/svc/weddingImages.php/addMessage"
         }).then(function successCallback(response) {
             modalMessage.hide();
@@ -100,13 +63,14 @@ app.controller('MessengerController', function($scope, $http, $q) {
 
        //  }
         },
+
         countItems: function() {
                 // Return number of items.
                 return controller.count;
               },
               calculateItemHeight: function(index) {
                       // Return the height of an item in pixels.
-                      return 45;
+                      return 165;
                     },
         destroyItemScope: function(index, itemScope) {
           //itemScope.canceler.resolve();
